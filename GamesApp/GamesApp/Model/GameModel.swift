@@ -7,11 +7,20 @@
 
 import Foundation
 
+// MARK: - Game Response
+struct GamesResponse: Codable {
+    var games: [Game]?
+
+    enum CodingKeys: String, CodingKey {
+        case games = "results"
+    }
+}
+
 // MARK: - Game
 struct Game: Codable {
     var gameId: Int
     var name: String?
-    var released: Date?
+    var released: String?
     var backgroundImage: String?
     var rating: Double?
     var metacritic: Int?
@@ -35,10 +44,10 @@ struct Game: Codable {
     
     var releaseFormattedDate: String {
         guard let released = released else { return "" }
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMMM yyyy"
-        return formatter.string(from: released)
+        guard let releaseDate = formatter.date(from: released) else { return "" }
+        return formatter.string(from: releaseDate)
     }
 
     var ratingString: String {
@@ -77,8 +86,13 @@ struct Genre: Codable {
 
 // MARK: - ParentPlatform
 struct ParentPlatform: Codable {
+    let platform: Platform
+}
+
+// MARK: - Platform
+struct Platform: Codable {
     let id: Int
-    let name, slug: String
+    let name: String
 }
 
 // MARK: - ShortScreenshot
