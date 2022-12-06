@@ -6,16 +6,6 @@
 //
 
 import Foundation
-
-// MARK: - Game Response
-struct GamesResponse: Codable {
-    var games: [Game]?
-
-    enum CodingKeys: String, CodingKey {
-        case games = "results"
-    }
-}
-
 // MARK: - Game
 struct Game: Codable {
     var gameId: Int
@@ -66,15 +56,6 @@ struct Game: Codable {
         guard let genres = genres else { return "" }
 
         return genres.map { $0.name }.joined(separator: ", ")
-    }
-}
-
-// MARK: - Game Detail
-struct GameDetail: Codable {
-    var descriptionRaw: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case descriptionRaw = "description_raw"
     }
 }
 

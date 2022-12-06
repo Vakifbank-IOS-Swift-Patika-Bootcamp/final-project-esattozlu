@@ -22,6 +22,8 @@
 		E821261E293FB3870029A57A /* Date + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821261D293FB3870029A57A /* Date + Ext.swift */; };
 		E8212620293FB84E0029A57A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821261F293FB84E0029A57A /* Constants.swift */; };
 		E8212623293FCCFC0029A57A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E8212622293FCCFC0029A57A /* SDWebImage */; };
+		E8212625293FCED80029A57A /* GamesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8212624293FCED80029A57A /* GamesResponseModel.swift */; };
+		E8212627293FCF060029A57A /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8212626293FCF060029A57A /* GameDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		E821261A293FA0C40029A57A /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		E821261D293FB3870029A57A /* Date + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Ext.swift"; sourceTree = "<group>"; };
 		E821261F293FB84E0029A57A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E8212624293FCED80029A57A /* GamesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesResponseModel.swift; sourceTree = "<group>"; };
+		E8212626293FCF060029A57A /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +158,9 @@
 		E8212617293F908B0029A57A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E8212624293FCED80029A57A /* GamesResponseModel.swift */,
 				E8212618293F90AA0029A57A /* GameModel.swift */,
+				E8212626293FCF060029A57A /* GameDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,7 +314,9 @@
 			files = (
 				E8212619293F90AA0029A57A /* GameModel.swift in Sources */,
 				E82125E8293F8FB00029A57A /* ViewController.swift in Sources */,
+				E8212625293FCED80029A57A /* GamesResponseModel.swift in Sources */,
 				E82125E4293F8FB00029A57A /* AppDelegate.swift in Sources */,
+				E8212627293FCF060029A57A /* GameDetailModel.swift in Sources */,
 				E821261B293FA0C40029A57A /* GameService.swift in Sources */,
 				E82125E6293F8FB00029A57A /* SceneDelegate.swift in Sources */,
 				E821261E293FB3870029A57A /* Date + Ext.swift in Sources */,
