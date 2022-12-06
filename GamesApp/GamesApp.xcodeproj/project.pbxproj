@@ -21,6 +21,7 @@
 		E821261B293FA0C40029A57A /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821261A293FA0C40029A57A /* GameService.swift */; };
 		E821261E293FB3870029A57A /* Date + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821261D293FB3870029A57A /* Date + Ext.swift */; };
 		E8212620293FB84E0029A57A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821261F293FB84E0029A57A /* Constants.swift */; };
+		E8212623293FCCFC0029A57A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E8212622293FCCFC0029A57A /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8212623293FCCFC0029A57A /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +185,9 @@
 			dependencies = (
 			);
 			name = GamesApp;
+			packageProductDependencies = (
+				E8212622293FCCFC0029A57A /* SDWebImage */,
+			);
 			productName = GamesApp;
 			productReference = E82125E0293F8FB00029A57A /* GamesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +260,9 @@
 				Base,
 			);
 			mainGroup = E82125D7293F8FB00029A57A;
+			packageReferences = (
+				E8212621293FCCFC0029A57A /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = E82125E1293F8FB00029A57A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -647,6 +655,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E8212621293FCCFC0029A57A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E8212622293FCCFC0029A57A /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8212621293FCCFC0029A57A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E82125EC293F8FB00029A57A /* GamesApp.xcdatamodeld */ = {
