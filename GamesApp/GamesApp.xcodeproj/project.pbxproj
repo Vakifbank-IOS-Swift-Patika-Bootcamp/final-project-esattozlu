@@ -32,6 +32,8 @@
 		E876EA32294089A30040C012 /* GameCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA30294089A30040C012 /* GameCollectionCell.swift */; };
 		E876EA33294089A30040C012 /* GameCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E876EA31294089A30040C012 /* GameCollectionCell.xib */; };
 		E876EA352940942B0040C012 /* GameListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA342940942B0040C012 /* GameListViewModel.swift */; };
+		E876EA3B2940D1790040C012 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA3A2940D1790040C012 /* BaseViewController.swift */; };
+		E876EA3D2940F0C00040C012 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA3C2940F0C00040C012 /* String + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		E876EA30294089A30040C012 /* GameCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionCell.swift; sourceTree = "<group>"; };
 		E876EA31294089A30040C012 /* GameCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameCollectionCell.xib; sourceTree = "<group>"; };
 		E876EA342940942B0040C012 /* GameListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewModel.swift; sourceTree = "<group>"; };
+		E876EA3A2940D1790040C012 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E876EA3C2940F0C00040C012 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,8 @@
 			children = (
 				E821261D293FB3870029A57A /* Date + Ext.swift */,
 				E821261F293FB84E0029A57A /* Constants.swift */,
+				E876EA3A2940D1790040C012 /* BaseViewController.swift */,
+				E876EA3C2940F0C00040C012 /* String + Ext.swift */,
 			);
 			name = Utility;
 			path = "uTİLİTY";
@@ -597,8 +603,10 @@
 				E876EA18294087C30040C012 /* GameDetailsViewController.swift in Sources */,
 				E82125E8293F8FB00029A57A /* FavoritesViewController.swift in Sources */,
 				E8212625293FCED80029A57A /* GamesResponseModel.swift in Sources */,
+				E876EA3B2940D1790040C012 /* BaseViewController.swift in Sources */,
 				E82125E4293F8FB00029A57A /* AppDelegate.swift in Sources */,
 				E876EA16294087710040C012 /* GameListViewController.swift in Sources */,
+				E876EA3D2940F0C00040C012 /* String + Ext.swift in Sources */,
 				E8212627293FCF060029A57A /* GameDetailModel.swift in Sources */,
 				E821261B293FA0C40029A57A /* GameService.swift in Sources */,
 				E876EA2F294088CE0040C012 /* NoteListViewController.swift in Sources */,

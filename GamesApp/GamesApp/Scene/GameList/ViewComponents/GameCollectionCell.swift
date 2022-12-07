@@ -39,7 +39,7 @@ class GameCollectionCell: UICollectionViewCell {
     func configureComponents(model: Game) {
         gameImageView.sd_setImage(with: URL(string: model.backgroundImage ?? ""))
         gameNameLabel.text = model.name
-        releaseDateLabel.text = model.released
+        releaseDateLabel.text = model.releaseFormattedDate
         genreLabel.text = model.genreText ?? "Unspecified"
         platformLabel.text = model.parentPlatformText ?? "Unspecified"
         raitingLabel.text = model.ratingString

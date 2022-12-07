@@ -7,22 +7,26 @@
 
 import UIKit
 
-class GameListViewController: UIViewController {
+class GameListViewController: BaseViewController {
 
     @IBOutlet weak var gameListCollectionView: UICollectionView!
     private var viewModel: GameListViewModelProtocol = GameListViewModel()
+    var timer: Timer?
     var filterMenu: UIMenu {
         return UIMenu(title: "Filter", image: nil, identifier: nil, options: [], children: menuItems)
     }
     var menuItems: [UIAction] {
         return [
             UIAction(title: "All Games", image: UIImage(named: "all"), handler: { (_) in
+                self.showActivityIndicator()
                 self.viewModel.fetchAllGames(page: 1)
             }),
             UIAction(title: "Top Rated", image: UIImage(named: "ranking"), handler: { (_) in
+                self.showActivityIndicator()
                 self.viewModel.fetchTopRatedGames(page: 1)
             }),
             UIAction(title: "Newly Released", image: UIImage(named: "newly"), handler: { (_) in
+                self.showActivityIndicator()
                 self.viewModel.fetchNewlyReleasedGames(page: 1)
             })
         ]
@@ -36,6 +40,7 @@ class GameListViewController: UIViewController {
         gameListCollectionView.dataSource  = self
         
         gameListCollectionView.register(UINib(nibName: "GameCollectionCell", bundle: nil), forCellWithReuseIdentifier: "gameCollectionCell")
+        showActivityIndicator()
         viewModel.fetchAllGames(page: 1)
         configureNavigationItem()
         configureGameSearchController()
@@ -48,11 +53,10 @@ class GameListViewController: UIViewController {
     
     func configureGameSearchController() {
         let gameSearchController = UISearchController(searchResultsController: nil)
-        gameSearchController.searchResultsUpdater = self
         gameSearchController.searchBar.placeholder = "Type an employee name to search."
+        gameSearchController.searchBar.delegate = self
         navigationItem.searchController = gameSearchController
     }
-
 }
 
 extension GameListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -80,18 +84,21 @@ extension GameListViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
-extension GameListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let query = searchController.searchBar.text else { return }
-        viewModel.fetchSearchedGames(query: query, page: 1)
-        if query == "" {
-            viewModel.fetchAllGames(page: 1)
-        }
+extension GameListViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        timer?.invalidate()
+
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            self.showActivityIndicator()
+            self.viewModel.fetchSearchedGames(query: searchText, page: 1)
+        })
     }
 }
 
 extension GameListViewController: GameListViewModelDelegate {
     func gamesLoaded() {
         gameListCollectionView.reloadData()
+        stopActivityIndicator()
     }
 }

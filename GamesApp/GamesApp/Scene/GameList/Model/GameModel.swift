@@ -35,14 +35,15 @@ struct Game: Codable {
     var releaseFormattedDate: String {
         guard let released = released else { return "" }
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMMM yyyy"
+        formatter.dateFormat = "yyyy-MM-dd"
         guard let releaseDate = formatter.date(from: released) else { return "" }
+        formatter.dateFormat = "dd MMMM yyyy"
         return formatter.string(from: releaseDate)
     }
 
     var ratingString: String {
         if let rating = rating {
-            return String(format: "%.1f", round(rating))
+            return String(format: "%.1f", rating)
         } else {
             return "0"
         }
