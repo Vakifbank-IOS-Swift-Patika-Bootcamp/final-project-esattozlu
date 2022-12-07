@@ -11,6 +11,22 @@ class GameListViewController: UIViewController {
 
     @IBOutlet weak var gameListCollectionView: UICollectionView!
     private var viewModel: GameListViewModelProtocol = GameListViewModel()
+    var filterMenu: UIMenu {
+        return UIMenu(title: "Filter", image: nil, identifier: nil, options: [], children: menuItems)
+    }
+    var menuItems: [UIAction] {
+        return [
+            UIAction(title: "All Games", image: UIImage(named: "all"), handler: { (_) in
+                self.viewModel.fetchAllGames(page: 1)
+            }),
+            UIAction(title: "Top Rated", image: UIImage(named: "ranking"), handler: { (_) in
+                self.viewModel.fetchTopRatedGames(page: 1)
+            }),
+            UIAction(title: "Newly Released", image: UIImage(named: "newly"), handler: { (_) in
+                self.viewModel.fetchNewlyReleasedGames(page: 1)
+            })
+        ]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +37,12 @@ class GameListViewController: UIViewController {
         
         gameListCollectionView.register(UINib(nibName: "GameCollectionCell", bundle: nil), forCellWithReuseIdentifier: "gameCollectionCell")
         viewModel.fetchAllGames(page: 1)
+        configureNavigationItem()
+    }
+    
+    func configureNavigationItem() {
+        let barButtonItem = UIBarButtonItem(title: "Filter", image: UIImage(named: "filter"), primaryAction: nil, menu: filterMenu)
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = barButtonItem
     }
 
 }
