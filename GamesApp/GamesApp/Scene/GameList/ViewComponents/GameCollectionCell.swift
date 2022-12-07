@@ -40,8 +40,8 @@ class GameCollectionCell: UICollectionViewCell {
         gameImageView.sd_setImage(with: URL(string: model.backgroundImage ?? ""))
         gameNameLabel.text = model.name
         releaseDateLabel.text = model.released
-        genreLabel.text = model.genreText
-        platformLabel.text = model.parentPlatformText
+        genreLabel.text = model.genreText ?? "Unspecified"
+        platformLabel.text = model.parentPlatformText ?? "Unspecified"
         raitingLabel.text = model.ratingString
         metacriticLabel.text = String(model.metacritic ?? 0)
         

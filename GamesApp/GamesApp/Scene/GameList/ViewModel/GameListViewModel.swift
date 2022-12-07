@@ -12,6 +12,7 @@ protocol GameListViewModelProtocol {
     func fetchTopRatedGames(page: Int)
     func fetchNewlyReleasedGames(page: Int)
     func fetchAllGames(page: Int)
+    func fetchSearchedGames(query: String, page: Int)
     func gamesCount() -> Int
     func getGames(at index: Int) -> Game?
     func getSizeForItem(width: CGFloat) -> CGSize
@@ -70,6 +71,21 @@ final class GameListViewModel: GameListViewModelProtocol {
         }
     }
     
+    func fetchSearchedGames(query: String, page: Int) {
+        GameService.searchByName(page: page, query: query) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.games = response.games
+                DispatchQueue.main.async {
+                    self.delegate?.gamesLoaded()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     func gamesCount() -> Int {
         games?.count ?? 0
     }
@@ -79,9 +95,8 @@ final class GameListViewModel: GameListViewModelProtocol {
     }
     
     func getSizeForItem(width: CGFloat) -> CGSize {
-        let padding: CGFloat            = 12
+        let padding: CGFloat            = 20
         let itemWidth                   = width - (padding*2)
         return .init(width: itemWidth, height: itemWidth)
     }
-    
 }

@@ -112,6 +112,8 @@ final class GameService {
     }
     
     class func searchByName(page:Int, query: String, completion: @escaping (Result<GamesResponse, Error>) -> Void) {
+        let query = query.replacingOccurrences(of: " ", with: "%20")
+        
         taskForGETRequest(url: Endpoints.searchByName(query: query, page: page).url, responseType: GamesResponse.self) { status in
             switch status {
             case .success(let games):

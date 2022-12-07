@@ -38,11 +38,19 @@ class GameListViewController: UIViewController {
         gameListCollectionView.register(UINib(nibName: "GameCollectionCell", bundle: nil), forCellWithReuseIdentifier: "gameCollectionCell")
         viewModel.fetchAllGames(page: 1)
         configureNavigationItem()
+        configureGameSearchController()
     }
     
     func configureNavigationItem() {
         let barButtonItem = UIBarButtonItem(title: "Filter", image: UIImage(named: "filter"), primaryAction: nil, menu: filterMenu)
         self.navigationController?.navigationBar.topItem?.rightBarButtonItem = barButtonItem
+    }
+    
+    func configureGameSearchController() {
+        let gameSearchController = UISearchController(searchResultsController: nil)
+        gameSearchController.searchResultsUpdater = self
+        gameSearchController.searchBar.placeholder = "Type an employee name to search."
+        navigationItem.searchController = gameSearchController
     }
 
 }
@@ -67,9 +75,19 @@ extension GameListViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: 10, left: 10, bottom: 10, right: 10)
+        .init(top: 10, left: 20, bottom: 10, right: 20)
     }
     
+}
+
+extension GameListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let query = searchController.searchBar.text else { return }
+        viewModel.fetchSearchedGames(query: query, page: 1)
+        if query == "" {
+            viewModel.fetchAllGames(page: 1)
+        }
+    }
 }
 
 extension GameListViewController: GameListViewModelDelegate {
