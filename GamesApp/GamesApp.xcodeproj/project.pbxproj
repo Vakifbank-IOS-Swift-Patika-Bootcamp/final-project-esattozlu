@@ -29,6 +29,9 @@
 		E876EA2B294088740040C012 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA2A294088740040C012 /* AddNoteViewController.swift */; };
 		E876EA2D2940889B0040C012 /* SearchGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA2C2940889B0040C012 /* SearchGamesViewController.swift */; };
 		E876EA2F294088CE0040C012 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA2E294088CE0040C012 /* NoteListViewController.swift */; };
+		E876EA32294089A30040C012 /* GameCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA30294089A30040C012 /* GameCollectionCell.swift */; };
+		E876EA33294089A30040C012 /* GameCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E876EA31294089A30040C012 /* GameCollectionCell.xib */; };
+		E876EA352940942B0040C012 /* GameListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA342940942B0040C012 /* GameListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		E876EA2A294088740040C012 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		E876EA2C2940889B0040C012 /* SearchGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGamesViewController.swift; sourceTree = "<group>"; };
 		E876EA2E294088CE0040C012 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
+		E876EA30294089A30040C012 /* GameCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionCell.swift; sourceTree = "<group>"; };
+		E876EA31294089A30040C012 /* GameCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameCollectionCell.xib; sourceTree = "<group>"; };
+		E876EA342940942B0040C012 /* GameListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				E8212624293FCED80029A57A /* GamesResponseModel.swift */,
-				E8212618293F90AA0029A57A /* GameModel.swift */,
 				E8212626293FCF060029A57A /* GameDetailModel.swift */,
 			);
 			path = Model;
@@ -229,6 +234,7 @@
 		E876EA09294085AB0040C012 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E8212618293F90AA0029A57A /* GameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 		E876EA0A294085B20040C012 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E876EA342940942B0040C012 /* GameListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -251,6 +258,8 @@
 		E876EA0C294085FF0040C012 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				E876EA30294089A30040C012 /* GameCollectionCell.swift */,
+				E876EA31294089A30040C012 /* GameCollectionCell.xib */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -557,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E82125F3293F8FB10029A57A /* LaunchScreen.storyboard in Resources */,
+				E876EA33294089A30040C012 /* GameCollectionCell.xib in Resources */,
 				E82125F0293F8FB10029A57A /* Assets.xcassets in Resources */,
 				E82125EB293F8FB00029A57A /* Main.storyboard in Resources */,
 			);
@@ -592,9 +602,11 @@
 				E8212627293FCF060029A57A /* GameDetailModel.swift in Sources */,
 				E821261B293FA0C40029A57A /* GameService.swift in Sources */,
 				E876EA2F294088CE0040C012 /* NoteListViewController.swift in Sources */,
+				E876EA32294089A30040C012 /* GameCollectionCell.swift in Sources */,
 				E876EA2D2940889B0040C012 /* SearchGamesViewController.swift in Sources */,
 				E82125E6293F8FB00029A57A /* SceneDelegate.swift in Sources */,
 				E876EA2B294088740040C012 /* AddNoteViewController.swift in Sources */,
+				E876EA352940942B0040C012 /* GameListViewModel.swift in Sources */,
 				E821261E293FB3870029A57A /* Date + Ext.swift in Sources */,
 				E82125EE293F8FB00029A57A /* GamesApp.xcdatamodeld in Sources */,
 				E8212620293FB84E0029A57A /* Constants.swift in Sources */,

@@ -57,6 +57,12 @@ struct Game: Codable {
 
         return genres.map { $0.name }.joined(separator: ", ")
     }
+    
+    var parentPlatformText: String? {
+        guard let parentPlatforms = parentPlatforms else { return "" }
+        
+        return parentPlatforms.map { $0.platform.name }.joined(separator: ", ")
+    }
 }
 
 // MARK: - Genre

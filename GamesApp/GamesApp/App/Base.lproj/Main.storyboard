@@ -16,12 +16,32 @@
                     <view key="view" contentMode="scaleToFill" id="nJH-wg-puv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IhU-3d-BQx">
+                                <rect key="frame" x="0.0" y="155" width="393" height="614"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iuq-lb-CgB">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9cB-R6-ZtD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9cB-R6-ZtD" firstAttribute="bottom" secondItem="IhU-3d-BQx" secondAttribute="bottom" id="5LJ-14-o8u"/>
+                            <constraint firstItem="9cB-R6-ZtD" firstAttribute="trailing" secondItem="IhU-3d-BQx" secondAttribute="trailing" id="IHY-LG-7HI"/>
+                            <constraint firstItem="IhU-3d-BQx" firstAttribute="leading" secondItem="9cB-R6-ZtD" secondAttribute="leading" id="ROR-vr-VXs"/>
+                            <constraint firstItem="IhU-3d-BQx" firstAttribute="top" secondItem="9cB-R6-ZtD" secondAttribute="top" id="nZC-iy-c7L"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Game List" id="R6X-Sv-HDm"/>
                     <connections>
-                        <segue destination="N3b-66-pnm" kind="show" id="G4D-IR-QQp"/>
+                        <outlet property="gameListCollectionView" destination="IhU-3d-BQx" id="vYC-AF-meH"/>
+                        <segue destination="N3b-66-pnm" kind="show" identifier="toGameDetailsFromList" id="G4D-IR-QQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6F-mX-ahA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -56,7 +76,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Favorite Games" id="Irp-TL-576"/>
                     <connections>
-                        <segue destination="N3b-66-pnm" kind="show" id="Wlq-78-4Hz"/>
+                        <segue destination="N3b-66-pnm" kind="show" identifier="toGameDetailsFromFavs" id="Wlq-78-4Hz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,8 +95,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="5nd-jb-gW3"/>
                     <connections>
-                        <segue destination="3Hz-s8-fu9" kind="show" id="Rhn-0b-2mz"/>
-                        <segue destination="t44-8E-mOU" kind="show" id="tTY-xi-Gqz"/>
+                        <segue destination="3Hz-s8-fu9" kind="show" identifier="toSearch" id="Rhn-0b-2mz"/>
+                        <segue destination="t44-8E-mOU" kind="show" identifier="toNoteFromNoteList" id="tTY-xi-Gqz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82P-gq-uzX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -95,7 +115,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="Mj0-we-uCK"/>
                     <connections>
-                        <segue destination="t44-8E-mOU" kind="show" id="Zt7-Gl-ZXk"/>
+                        <segue destination="t44-8E-mOU" kind="show" identifier="toNoteFromSearch" id="Zt7-Gl-ZXk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4c-6G-c8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -205,8 +225,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tTY-xi-Gqz"/>
-        <segue reference="Wlq-78-4Hz"/>
+        <segue reference="Zt7-Gl-ZXk"/>
+        <segue reference="G4D-IR-QQp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
