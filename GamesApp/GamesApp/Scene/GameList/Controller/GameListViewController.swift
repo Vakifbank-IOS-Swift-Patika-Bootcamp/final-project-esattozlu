@@ -57,6 +57,12 @@ class GameListViewController: BaseViewController {
         gameSearchController.searchBar.delegate = self
         navigationItem.searchController = gameSearchController
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailsVC = segue.destination as? GameDetailsViewController else { return }
+        guard let index = sender as? Int else { return }
+        detailsVC.selectedGame = viewModel.getGames(at: index)
+    }
 }
 
 extension GameListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -69,6 +75,10 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
               let model = viewModel.getGames(at: indexPath.row) else { return UICollectionViewCell() }
         cell.configureComponents(model: model)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toGameDetailsFromList", sender: indexPath.row)
     }
 }
 

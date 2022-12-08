@@ -48,9 +48,10 @@
             </objects>
             <point key="canvasLocation" x="1982.4427480916029" y="-705.63380281690149"/>
         </scene>
-        <!--Game Details-->
+        <!--Game Details View Controller-->
         <scene sceneID="DJJ-6q-ouC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jmX-Q8-mmn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="N3b-66-pnm" customClass="GameDetailsViewController" customModule="GamesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sAa-Hm-liG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -58,11 +59,11 @@
                         <viewLayoutGuide key="safeArea" id="i5X-OA-kee"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Game Details" id="nqW-vI-atO"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="nqW-vI-atO"/>
+                    <size key="freeformSize" width="393" height="852"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jmX-Q8-mmn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3263" y="-384"/>
+            <point key="canvasLocation" x="3261.8320610687019" y="-384.50704225352115"/>
         </scene>
         <!--Favorite Games-->
         <scene sceneID="tne-QT-ifu">
@@ -144,6 +145,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5xZ-hU-lmp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bSX-E5-MvD">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

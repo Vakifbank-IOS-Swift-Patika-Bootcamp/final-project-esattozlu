@@ -49,6 +49,30 @@ struct Game: Codable {
         }
     }
     
+    var metacriticString: String {
+        if let metacritic = metacritic {
+            return String(metacritic)
+        } else {
+            return "0"
+        }
+    }
+    
+    var suggestionCountString: String {
+        if let suggestionsCount = suggestionsCount {
+            return String(suggestionsCount)
+        } else {
+            return "0"
+        }
+    }
+    
+    var reviewsCountString: String {
+        if let reviewsCount = reviewsCount {
+            return String(reviewsCount)
+        } else {
+            return "0"
+        }
+    }
+    
     var backgroundUrl: URL {
         return URL(string: backgroundImage ?? "")!
     }
