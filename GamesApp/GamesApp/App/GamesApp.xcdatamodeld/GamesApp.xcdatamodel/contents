@@ -12,4 +12,13 @@
         <attribute name="reviews" optional="YES" attributeType="String"/>
         <attribute name="suggestions" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="NotesCoreData" representedClassName="NotesCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="gameId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="gameImage" optional="YES" attributeType="String"/>
+        <attribute name="gameName" optional="YES" attributeType="String"/>
+        <attribute name="gameReleased" optional="YES" attributeType="String"/>
+        <attribute name="metacritic" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="raiting" optional="YES" attributeType="String"/>
+    </entity>
 </model>

@@ -39,8 +39,8 @@ class FavoriteDetailsViewController: UIViewController {
         metacriticLabel.text = favorite.metacritic
         genreLabel.text = favorite.genres
         raitingBelowLabel.text = favorite.raiting
-        suggestionLabel.text = "\(String(describing: favorite.suggestions)) suggestions"
-        reviewsLabel.text = "\(String(describing: favorite.reviews)) raitings"
+        suggestionLabel.text = "\(favorite.suggestions ?? "0") suggestions"
+        reviewsLabel.text = "\(favorite.reviews ?? "0") raitings"
     }
     
     @IBAction func removeFromFavoritesButtonClicked(_ sender: Any) {

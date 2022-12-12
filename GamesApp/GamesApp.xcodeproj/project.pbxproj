@@ -34,6 +34,8 @@
 		E86BB2BC2941D97100DE1C60 /* GameDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86BB2BB2941D97100DE1C60 /* GameDetailsView.swift */; };
 		E86BB2BE2941D98600DE1C60 /* GameDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86BB2BD2941D98600DE1C60 /* GameDetailsView.xib */; };
 		E86F9E1629478632009A2922 /* SmallGamesCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86F9E1529478632009A2922 /* SmallGamesCollectionCell.xib */; };
+		E86F9E192947926F009A2922 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F9E172947926F009A2922 /* SearchTableViewCell.swift */; };
+		E86F9E1A2947926F009A2922 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86F9E182947926F009A2922 /* SearchTableViewCell.xib */; };
 		E876EA16294087710040C012 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA15294087710040C012 /* GameListViewController.swift */; };
 		E876EA18294087C30040C012 /* GameDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA17294087C30040C012 /* GameDetailsViewController.swift */; };
 		E876EA2B294088740040C012 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA2A294088740040C012 /* AddNoteViewController.swift */; };
@@ -44,6 +46,9 @@
 		E876EA352940942B0040C012 /* GameListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA342940942B0040C012 /* GameListViewModel.swift */; };
 		E876EA3B2940D1790040C012 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA3A2940D1790040C012 /* BaseViewController.swift */; };
 		E876EA3D2940F0C00040C012 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA3C2940F0C00040C012 /* String + Ext.swift */; };
+		E8DB8EBB2947AAF400F2BF91 /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB8EBA2947AAF400F2BF91 /* NoteListViewModel.swift */; };
+		E8DB8EBE2947B0DF00F2BF91 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB8EBC2947B0DF00F2BF91 /* NotesTableViewCell.swift */; };
+		E8DB8EBF2947B0DF00F2BF91 /* NotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8DB8EBD2947B0DF00F2BF91 /* NotesTableViewCell.xib */; };
 		E8F5C13B2943ECEF00F2A835 /* FavoriteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5C13A2943ECEF00F2A835 /* FavoriteDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +100,8 @@
 		E86BB2BB2941D97100DE1C60 /* GameDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsView.swift; sourceTree = "<group>"; };
 		E86BB2BD2941D98600DE1C60 /* GameDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameDetailsView.xib; sourceTree = "<group>"; };
 		E86F9E1529478632009A2922 /* SmallGamesCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmallGamesCollectionCell.xib; sourceTree = "<group>"; };
+		E86F9E172947926F009A2922 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		E86F9E182947926F009A2922 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		E876EA15294087710040C012 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
 		E876EA17294087C30040C012 /* GameDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewController.swift; sourceTree = "<group>"; };
 		E876EA2A294088740040C012 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +112,9 @@
 		E876EA342940942B0040C012 /* GameListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewModel.swift; sourceTree = "<group>"; };
 		E876EA3A2940D1790040C012 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E876EA3C2940F0C00040C012 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
+		E8DB8EBA2947AAF400F2BF91 /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
+		E8DB8EBC2947B0DF00F2BF91 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
+		E8DB8EBD2947B0DF00F2BF91 /* NotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableViewCell.xib; sourceTree = "<group>"; };
 		E8F5C13A2943ECEF00F2A835 /* FavoriteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				E876EA1D294088010040C012 /* ViewModel */,
-				E876EA1C294087FB0040C012 /* Model */,
 				E876EA1B294087F20040C012 /* Controller */,
 				E876EA19294087E20040C012 /* ViewComponents */,
 			);
@@ -399,13 +408,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		E876EA1C294087FB0040C012 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		E876EA1D294088010040C012 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +427,7 @@
 		E876EA1F294088160040C012 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E8DB8EBA2947AAF400F2BF91 /* NoteListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -440,6 +443,8 @@
 		E876EA21294088210040C012 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				E8DB8EBC2947B0DF00F2BF91 /* NotesTableViewCell.swift */,
+				E8DB8EBD2947B0DF00F2BF91 /* NotesTableViewCell.xib */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -469,6 +474,8 @@
 		E876EA25294088300040C012 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				E86F9E172947926F009A2922 /* SearchTableViewCell.swift */,
+				E86F9E182947926F009A2922 /* SearchTableViewCell.xib */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -613,12 +620,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E82125F3293F8FB10029A57A /* LaunchScreen.storyboard in Resources */,
+				E86F9E1A2947926F009A2922 /* SearchTableViewCell.xib in Resources */,
 				E876EA33294089A30040C012 /* GameCollectionCell.xib in Resources */,
 				E86BB2BE2941D98600DE1C60 /* GameDetailsView.xib in Resources */,
 				E82125F0293F8FB10029A57A /* Assets.xcassets in Resources */,
 				E82125EB293F8FB00029A57A /* Main.storyboard in Resources */,
 				E807FE7A2942703E00F8C898 /* ScreenshotsCollectionCell.xib in Resources */,
 				E86F9E1629478632009A2922 /* SmallGamesCollectionCell.xib in Resources */,
+				E8DB8EBF2947B0DF00F2BF91 /* NotesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,9 +665,12 @@
 				E84987D929434BA700D319B0 /* CoreDataManager.swift in Sources */,
 				E824300F294719AC00947CE9 /* FavoriteDetailViewModel.swift in Sources */,
 				E876EA3D2940F0C00040C012 /* String + Ext.swift in Sources */,
+				E86F9E192947926F009A2922 /* SearchTableViewCell.swift in Sources */,
 				E8212627293FCF060029A57A /* GameDetailModel.swift in Sources */,
 				E821261B293FA0C40029A57A /* GameService.swift in Sources */,
 				E876EA2F294088CE0040C012 /* NoteListViewController.swift in Sources */,
+				E8DB8EBE2947B0DF00F2BF91 /* NotesTableViewCell.swift in Sources */,
+				E8DB8EBB2947AAF400F2BF91 /* NoteListViewModel.swift in Sources */,
 				E86BB2BC2941D97100DE1C60 /* GameDetailsView.swift in Sources */,
 				E876EA32294089A30040C012 /* GameCollectionCell.swift in Sources */,
 				E876EA2D2940889B0040C012 /* SearchGamesViewController.swift in Sources */,
