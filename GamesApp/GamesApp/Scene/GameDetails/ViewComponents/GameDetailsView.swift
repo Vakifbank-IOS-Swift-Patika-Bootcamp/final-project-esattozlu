@@ -8,7 +8,7 @@
 import UIKit
 
 class GameDetailsView: UIView {
-
+    
     @IBOutlet private weak var gameImageView: UIImageView!
     @IBOutlet private weak var addToFavButton: UIButton!
     @IBOutlet private weak var addedToFavButton: UIButton!
@@ -24,14 +24,17 @@ class GameDetailsView: UIView {
     @IBOutlet private weak var reviewsLabel: UILabel!
     @IBOutlet private weak var publishersLabel: UILabel!
     var selectedGame: Game?
+    var viewModel: GameDetailsViewModelProtocol = GameDetailsViewModel()
     var gameDetail: GameDetail? {
         didSet {
             DispatchQueue.main.async {
                 self.configureLabels()
                 self.configureCollectionView()
+                self.configureFavoriteButton()
             }
         }
     }
+    var isFavorited = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,20 +53,29 @@ class GameDetailsView: UIView {
         }
     }
     
+    private func configureFavoriteButton() {
+        if isFavorited {
+            addedToFavButton.isHidden = false
+            addToFavButton.isHidden = true
+        } else {
+            addedToFavButton.isHidden = true
+            addToFavButton.isHidden = false
+        }
+    }
+    
     private func configureLabels() {
-        guard let selectedGame = selectedGame,
-              let gameDetail = gameDetail else { return }
-        gameImageView.sd_setImage(with: selectedGame.backgroundUrl)
-        releasedLabel.text = selectedGame.releaseFormattedDate
-        raitingLabel.text = selectedGame.ratingString
-        raitingBelowLabel.text = selectedGame.ratingString
-        gameNameLabel.text = selectedGame.name
-        metacriticsLabel.text = selectedGame.metacriticString
-        genresLabel.text = selectedGame.genreText
-        suggestionLabel.text = "\(selectedGame.suggestionCountString) user suggestions"
-        reviewsLabel.text = "\(selectedGame.reviewsCountString) reviews"
-        publishersLabel.text = gameDetail.publishersString
-        gameDescriptionLabel.text = gameDetail.descriptionRaw
+        guard let gameDetail = gameDetail else { return }
+        gameImageView.sd_setImage(with: gameDetail.backgroundUrl)
+        releasedLabel.text          = gameDetail.releaseFormattedDate
+        raitingLabel.text           = gameDetail.ratingString
+        raitingBelowLabel.text      = gameDetail.ratingString
+        gameNameLabel.text          = gameDetail.name
+        metacriticsLabel.text       = gameDetail.metacriticString
+        genresLabel.text            = gameDetail.genreText
+        suggestionLabel.text        = "\(gameDetail.suggestionCountString) user suggestions"
+        reviewsLabel.text           = "\(gameDetail.reviewsCountString) reviews"
+        publishersLabel.text        = gameDetail.publishersString
+        gameDescriptionLabel.text   = gameDetail.descriptionRaw
     }
     
     private func configureCollectionView() {
@@ -71,6 +83,22 @@ class GameDetailsView: UIView {
         screenshotsCollectionView.dataSource = self
         screenshotsCollectionView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         screenshotsCollectionView.register(UINib(nibName: "ScreenshotsCollectionCell", bundle: nil), forCellWithReuseIdentifier: "screenshotsCollectionCell")
+    }
+    
+    @IBAction func addToFavoritesButtonClicked(_ sender: Any) {
+        guard let selectedGame = selectedGame else { return }
+        viewModel.saveGameToCoreData(game: selectedGame) {
+            addedToFavButton.isHidden = false
+            addToFavButton.isHidden = true
+        }
+    }
+    
+    @IBAction func addedToFavoritesButtonClicked(_ sender: Any) {
+        guard let selectedGame = selectedGame else { return }
+        viewModel.removeGameFromCoreData(id: selectedGame.gameId) {
+            addedToFavButton.isHidden = true
+            addToFavButton.isHidden = false
+        }
     }
 }
 

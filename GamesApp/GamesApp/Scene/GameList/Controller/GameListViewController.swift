@@ -36,14 +36,18 @@ class GameListViewController: BaseViewController {
         super.viewDidLoad()
         
         viewModel.delegate = self
-        gameListCollectionView.delegate    = self
-        gameListCollectionView.dataSource  = self
-        
-        gameListCollectionView.register(UINib(nibName: "GameCollectionCell", bundle: nil), forCellWithReuseIdentifier: "gameCollectionCell")
+        configureCollectionView()
         showActivityIndicator()
         viewModel.fetchAllGames(page: 1)
         configureNavigationItem()
         configureGameSearchController()
+    }
+    
+    func configureCollectionView() {
+        gameListCollectionView.delegate    = self
+        gameListCollectionView.dataSource  = self
+        
+        gameListCollectionView.register(UINib(nibName: "GameCollectionCell", bundle: nil), forCellWithReuseIdentifier: "gameCollectionCell")
     }
     
     func configureNavigationItem() {
