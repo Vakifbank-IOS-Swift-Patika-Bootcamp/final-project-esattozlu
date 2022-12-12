@@ -19,7 +19,7 @@ class GameDetailsViewController: BaseViewController {
         super.viewDidLoad()
         createDetailsView()
         configureScrollView()
-        viewModel.delegate = self
+        viewModel.gameDetailsViewModelDelegate = self
     }
     
     func createDetailsView() {
@@ -50,12 +50,14 @@ class GameDetailsViewController: BaseViewController {
     }
 }
 
-extension GameDetailsViewController: GameDetailsViewModelDegelegate {
+extension GameDetailsViewController: GameDetailsViewModelDelegate {
     func gameDetailLoaded() {
+        guard let selectedGame = selectedGame else { return }
         let gameDetail = viewModel.getGameDetail()
         detailsView = GameDetailsView()
         detailsView?.gameDetail = gameDetail
         detailsView?.selectedGame = selectedGame
+        detailsView?.isFavorited = CoreDataManager.shared.isFavorited(game: selectedGame)
         stackView.addArrangedSubview(detailsView!)
     }
 }

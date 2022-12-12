@@ -8,17 +8,23 @@
 import Foundation
 
 protocol GameDetailsViewModelProtocol {
-    var delegate: GameDetailsViewModelDegelegate? { get set }
+    var gameDetailsViewModelDelegate: GameDetailsViewModelDelegate? { get set }
     func fetchGameDetail(id: Int)
     func getGameDetail() -> GameDetail?
+    func saveGameToCoreData(game: Game, completion: () -> Void)
+    func removeGameFromCoreData(id: Int, completion: () -> Void)
 }
 
-protocol GameDetailsViewModelDegelegate: AnyObject {
+protocol GameDetailsViewModelDelegate: AnyObject {
     func gameDetailLoaded()
 }
 
+protocol GameDetailsCoreDataDelegate: AnyObject {
+    func gameFavoriteStatusChanged()
+}
+
 class GameDetailsViewModel: GameDetailsViewModelProtocol {
-    weak var delegate: GameDetailsViewModelDegelegate?
+    weak var gameDetailsViewModelDelegate: GameDetailsViewModelDelegate?
     private var gameDetail: GameDetail?
     
     func fetchGameDetail(id: Int) {
@@ -28,7 +34,7 @@ class GameDetailsViewModel: GameDetailsViewModelProtocol {
             case .success(let gameDetail):
                 DispatchQueue.main.async {
                     self.gameDetail = gameDetail
-                    self.delegate?.gameDetailLoaded()
+                    self.gameDetailsViewModelDelegate?.gameDetailLoaded()
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -40,5 +46,17 @@ class GameDetailsViewModel: GameDetailsViewModelProtocol {
         return gameDetail
     }
     
+    func saveGameToCoreData(game: Game, completion: () -> Void) {
+        CoreDataManager.shared.saveToFavorites(game: game) {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FavoritesChanged"), object: nil)
+            completion()
+        }
+    }
     
+    func removeGameFromCoreData(id: Int, completion: () -> Void) {
+        CoreDataManager.shared.removeFromFavorites(id: id) {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FavoritesChanged"), object: nil)
+            completion()
+        }
+    }
 }
