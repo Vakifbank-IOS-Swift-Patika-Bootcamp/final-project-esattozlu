@@ -73,8 +73,8 @@ struct Game: Codable {
         }
     }
     
-    var backgroundUrl: URL {
-        return URL(string: backgroundImage ?? "")!
+    var backgroundUrl: URL? {
+        return URL(string: backgroundImage ?? "")
     }
 
     var genreText: String? {

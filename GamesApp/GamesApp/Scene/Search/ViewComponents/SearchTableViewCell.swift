@@ -20,7 +20,7 @@ class SearchTableViewCell: UITableViewCell {
     
     var game: Game? {
         didSet {
-            configureCell()
+            configureComponents()
         }
     }
     
@@ -34,14 +34,11 @@ class SearchTableViewCell: UITableViewCell {
     
     func configureCell() {
         containerView.layer.cornerRadius = 20
-        containerView.layer.masksToBounds = true
         layer.cornerRadius = 20
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 15
-        layer.shadowOpacity = 0.3
-        layer.masksToBounds = false
-        
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        containerView.layer.shadowRadius = 15
+        containerView.layer.shadowOpacity = 0.4
         gameImageView.layer.cornerRadius = 15
     }
     

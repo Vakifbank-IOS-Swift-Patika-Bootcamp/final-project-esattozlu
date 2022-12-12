@@ -341,24 +341,31 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxP-eI-qiv">
-                                <rect key="frame" x="10" y="411.66666666666669" width="373" height="28.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <rect key="frame" x="40" y="215.66666666666666" width="313" height="26.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list.bullet.clipboard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3xh-DR-D0b">
+                                <rect key="frame" x="20" y="240.66666666666663" width="353" height="479"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qbm-Qs-wug"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3xh-DR-D0b" firstAttribute="height" secondItem="Hrp-yd-wyB" secondAttribute="height" multiplier="0.56" id="31D-iL-gr8"/>
                             <constraint firstItem="Qbm-Qs-wug" firstAttribute="trailing" secondItem="Mmo-wR-ipI" secondAttribute="trailing" id="3ZJ-bB-vu1"/>
+                            <constraint firstItem="Qbm-Qs-wug" firstAttribute="trailing" secondItem="3xh-DR-D0b" secondAttribute="trailing" constant="20" id="67A-U6-hgt"/>
+                            <constraint firstItem="Qbm-Qs-wug" firstAttribute="trailing" secondItem="dxP-eI-qiv" secondAttribute="trailing" constant="40" id="6rP-5J-2st"/>
                             <constraint firstItem="Qbm-Qs-wug" firstAttribute="bottom" secondItem="u41-Oe-N1t" secondAttribute="bottom" constant="10" id="9uB-jy-E52"/>
-                            <constraint firstItem="dxP-eI-qiv" firstAttribute="centerY" secondItem="Hrp-yd-wyB" secondAttribute="centerY" id="EFS-Kf-JQo"/>
                             <constraint firstItem="Mmo-wR-ipI" firstAttribute="top" secondItem="Qbm-Qs-wug" secondAttribute="top" id="HxQ-8W-N8T"/>
-                            <constraint firstItem="Qbm-Qs-wug" firstAttribute="trailing" secondItem="dxP-eI-qiv" secondAttribute="trailing" constant="10" id="Rld-Ql-5Oc"/>
-                            <constraint firstItem="dxP-eI-qiv" firstAttribute="centerX" secondItem="Hrp-yd-wyB" secondAttribute="centerX" id="WmP-XH-TN8"/>
+                            <constraint firstItem="3xh-DR-D0b" firstAttribute="leading" secondItem="Qbm-Qs-wug" secondAttribute="leading" constant="20" id="dH6-uA-tfa"/>
+                            <constraint firstItem="3xh-DR-D0b" firstAttribute="top" secondItem="dxP-eI-qiv" secondAttribute="bottom" id="e9r-8V-uqZ"/>
+                            <constraint firstItem="dxP-eI-qiv" firstAttribute="leading" secondItem="Qbm-Qs-wug" secondAttribute="leading" constant="40" id="gIU-ta-yvm"/>
+                            <constraint firstItem="Qbm-Qs-wug" firstAttribute="bottom" secondItem="3xh-DR-D0b" secondAttribute="bottom" constant="50" id="obs-d3-n4P"/>
                             <constraint firstItem="Mmo-wR-ipI" firstAttribute="leading" secondItem="Qbm-Qs-wug" secondAttribute="leading" id="pTq-mc-eHc"/>
                             <constraint firstItem="Qbm-Qs-wug" firstAttribute="trailing" secondItem="u41-Oe-N1t" secondAttribute="trailing" constant="10" id="q6c-Qp-TDp"/>
-                            <constraint firstItem="dxP-eI-qiv" firstAttribute="leading" secondItem="Qbm-Qs-wug" secondAttribute="leading" constant="10" id="qBX-vM-7cQ"/>
                             <constraint firstItem="Qbm-Qs-wug" firstAttribute="bottom" secondItem="Mmo-wR-ipI" secondAttribute="bottom" id="zid-5b-uoh"/>
                         </constraints>
                     </view>
@@ -386,24 +393,44 @@
                                 <rect key="frame" x="0.0" y="155" width="393" height="614"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kfd-8i-LgY">
+                                <rect key="frame" x="20" y="251.33333333333337" width="353" height="467"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2n-KV-fjC">
+                                <rect key="frame" x="50" y="250.33333333333334" width="293" height="26.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fas-Qg-dDD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="glZ-0x-QFa" firstAttribute="top" secondItem="fas-Qg-dDD" secondAttribute="top" id="7Ky-bk-6iT"/>
+                            <constraint firstItem="K2n-KV-fjC" firstAttribute="top" secondItem="kfd-8i-LgY" secondAttribute="top" id="Ji1-RW-k2n"/>
+                            <constraint firstItem="fas-Qg-dDD" firstAttribute="trailing" secondItem="K2n-KV-fjC" secondAttribute="trailing" constant="50" id="NAj-gF-27T"/>
+                            <constraint firstItem="kfd-8i-LgY" firstAttribute="height" secondItem="Ym1-SU-uq2" secondAttribute="height" multiplier="0.55" id="RU6-Xf-tEq"/>
                             <constraint firstItem="fas-Qg-dDD" firstAttribute="bottom" secondItem="glZ-0x-QFa" secondAttribute="bottom" id="STr-2Z-rYa"/>
                             <constraint firstItem="glZ-0x-QFa" firstAttribute="leading" secondItem="fas-Qg-dDD" secondAttribute="leading" id="Uff-BA-7B4"/>
+                            <constraint firstItem="kfd-8i-LgY" firstAttribute="leading" secondItem="fas-Qg-dDD" secondAttribute="leading" constant="20" id="YQO-fe-Br6"/>
+                            <constraint firstItem="fas-Qg-dDD" firstAttribute="trailing" secondItem="kfd-8i-LgY" secondAttribute="trailing" constant="20" id="cxN-KW-Vwt"/>
                             <constraint firstItem="fas-Qg-dDD" firstAttribute="trailing" secondItem="glZ-0x-QFa" secondAttribute="trailing" id="dkO-rZ-FJd"/>
+                            <constraint firstItem="K2n-KV-fjC" firstAttribute="leading" secondItem="fas-Qg-dDD" secondAttribute="leading" constant="50" id="eyF-Vw-UTo"/>
+                            <constraint firstItem="fas-Qg-dDD" firstAttribute="bottom" secondItem="kfd-8i-LgY" secondAttribute="bottom" constant="50" id="sqD-BC-PAe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="Mj0-we-uCK"/>
                     <connections>
+                        <outlet property="emptyTableViewLabel" destination="K2n-KV-fjC" id="AhO-51-3B3"/>
+                        <outlet property="searchIcon" destination="kfd-8i-LgY" id="mzA-Q0-Ugy"/>
+                        <outlet property="searchTableView" destination="glZ-0x-QFa" id="oFw-OD-obX"/>
                         <segue destination="t44-8E-mOU" kind="presentation" identifier="fromSearchToAddNote" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="1mg-SB-q0z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4c-6G-c8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2963" y="708"/>
+            <point key="canvasLocation" x="2962.5954198473282" y="707.04225352112678"/>
         </scene>
         <!--Note-->
         <scene sceneID="9MV-lS-x8Q">
@@ -644,13 +671,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HjM-Dw-4hl"/>
+        <segue reference="1mg-SB-q0z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="GoldStar" width="600" height="571"/>
         <image name="MetacriticLogo" width="400" height="400"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="multiply.circle.fill" catalog="system" width="128" height="123"/>
         <image name="note.text.badge.plus" catalog="system" width="128" height="108"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>

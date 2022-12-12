@@ -26,6 +26,7 @@ class NoteListViewController: UIViewController {
         notesTableView.dataSource = self
         
         notesTableView.register(UINib(nibName: "NotesTableViewCell", bundle: nil), forCellReuseIdentifier: "noteTableCell")
+        emptyNoteMessageLabel.text = "There is no added note. \nTo add note please click add(+) button."
     }
     
     func fetchNotesFromCoreData() {
