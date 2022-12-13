@@ -35,10 +35,10 @@ class SearchTableViewCell: UITableViewCell {
     func configureCell() {
         containerView.layer.cornerRadius = 20
         layer.cornerRadius = 20
-        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowColor = UIColor.systemGray.cgColor
         containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
         containerView.layer.shadowRadius = 15
-        containerView.layer.shadowOpacity = 0.4
+        containerView.layer.shadowOpacity = 0.9
         gameImageView.layer.cornerRadius = 15
     }
     

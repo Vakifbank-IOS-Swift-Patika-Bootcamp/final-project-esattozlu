@@ -29,10 +29,10 @@ class GameCollectionCell: UICollectionViewCell {
         containerView.layer.cornerRadius = 20
         containerView.layer.masksToBounds = true
         layer.cornerRadius = 20
-        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowColor = UIColor.systemGray.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 15
-        layer.shadowOpacity = 0.3
+        layer.shadowOpacity = 0.9
         layer.masksToBounds = false
     }
     

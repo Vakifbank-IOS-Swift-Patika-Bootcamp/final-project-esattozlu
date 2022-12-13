@@ -39,6 +39,16 @@ class SearchGamesViewController: BaseViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
+    
+    func presentAddNoteVC(index: Int) {
+        var addNoteVC = AddNoteViewController()
+        addNoteVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addNoteVC") as! AddNoteViewController
+        addNoteVC.modalPresentationStyle  = .overFullScreen
+        addNoteVC.modalTransitionStyle    = .crossDissolve
+        addNoteVC.gameFromSearch = viewModel.getGames(at: index)
+        addNoteVC.viewModel.delegate = self
+        self.present(addNoteVC, animated: true)
+    }
 }
 
 extension SearchGamesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -54,6 +64,10 @@ extension SearchGamesViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         165
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presentAddNoteVC(index: indexPath.row)
     }
 }
 
@@ -74,7 +88,12 @@ extension SearchGamesViewController: UISearchBarDelegate {
                 self.searchIcon.isHidden = true
             })
         }
-        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.clearGames()
+        emptyTableViewLabel.isHidden = false
+        searchIcon.isHidden = false
     }
 }
 
@@ -82,5 +101,11 @@ extension SearchGamesViewController: SearchGamesViewModelDelegate {
     func gamesLoaded() {
         self.stopActivityIndicator()
         searchTableView.reloadData()
+    }
+}
+
+extension SearchGamesViewController: AddNoteViewModelDelegate {
+    func noteSaved() {
+        navigationController?.popViewController(animated: true)
     }
 }

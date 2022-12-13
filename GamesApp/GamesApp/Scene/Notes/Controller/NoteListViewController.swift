@@ -11,6 +11,7 @@ class NoteListViewController: UIViewController {
 
     @IBOutlet weak var notesTableView: UITableView!
     @IBOutlet weak var emptyNoteMessageLabel: UILabel!
+    @IBOutlet weak var emptyNoteImage: UIImageView!
     var notes: [NotesCoreData]?
     var viewModel: NoteListViewModelProtocol = NoteListViewModel()
     
@@ -19,6 +20,7 @@ class NoteListViewController: UIViewController {
 
         configureTableView()
         fetchNotesFromCoreData()
+        viewModel.delegate = self
     }
     
     func configureTableView() {
@@ -41,6 +43,10 @@ class NoteListViewController: UIViewController {
         guard let notes = notes else { return }
         if !notes.isEmpty {
             emptyNoteMessageLabel.isHidden = true
+            emptyNoteImage.isHidden = true
+        } else {
+            emptyNoteMessageLabel.isHidden = false
+            emptyNoteImage.isHidden = false
         }
     }
     
@@ -48,11 +54,15 @@ class NoteListViewController: UIViewController {
         performSegue(withIdentifier: "toSearch", sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fromNotesToAddNote" {
-            guard let index = sender as? Int else { return }
-            
-        }
+    func presentAddNoteVC(index: Int) {
+        guard let notes = notes else { return }
+        var addNoteVC = AddNoteViewController()
+        addNoteVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addNoteVC") as! AddNoteViewController
+        addNoteVC.modalPresentationStyle  = .overFullScreen
+        addNoteVC.modalTransitionStyle    = .crossDissolve
+        addNoteVC.gameFromNoteList = notes[index]
+        addNoteVC.isFromAddButton = false
+        self.present(addNoteVC, animated: true)
     }
 }
 
@@ -69,14 +79,24 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        185
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "fromNotesToAddNote", sender: indexPath.row)
+        presentAddNoteVC(index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
+            guard let notes = notes else { return }
+            viewModel.deleteNote(note: notes[indexPath.row])
         }
     }
-    
+}
+
+extension NoteListViewController: NoteListViewModelDelegate {
+    func coreDataChanged() {
+        fetchNotesFromCoreData()
+    }
 }

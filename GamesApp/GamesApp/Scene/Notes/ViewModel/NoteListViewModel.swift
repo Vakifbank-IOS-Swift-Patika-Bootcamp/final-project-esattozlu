@@ -8,13 +8,36 @@
 import Foundation
 
 protocol NoteListViewModelProtocol {
+    var delegate: NoteListViewModelDelegate? { get set }
     func fetchNotes() -> [NotesCoreData]
+    func deleteNote(note: NotesCoreData)
+}
+
+protocol NoteListViewModelDelegate {
+    func coreDataChanged()
 }
 
 class NoteListViewModel: NoteListViewModelProtocol {
+    var delegate: NoteListViewModelDelegate?
+    
+    init() {
+        CoreDataManager.shared.notesDelegate = self
+    }
+    
     func fetchNotes() -> [NotesCoreData] {
         return CoreDataManager.shared.getNotes {}
     }
     
-    
+    func deleteNote(note: NotesCoreData) {
+        let id = Int(note.gameId)
+        CoreDataManager.shared.deleteNote(gameId: id) {}
+    }
+}
+
+extension NoteListViewModel: CoreDataManagerDelegate {
+    func coreDataUpdated() {
+        DispatchQueue.main.async {
+            self.delegate?.coreDataChanged()
+        }
+    }
 }

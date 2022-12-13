@@ -8,8 +8,17 @@
 import UIKit
 import CoreData
 
-final class CoreDataManager {
+protocol CoreDataManagerProtocol {
+    var notesDelegate: CoreDataManagerDelegate? { get set }
+}
+
+protocol CoreDataManagerDelegate {
+    func coreDataUpdated()
+}
+
+final class CoreDataManager: CoreDataManagerProtocol {
     static let shared = CoreDataManager()
+    var notesDelegate: CoreDataManagerDelegate?
     private let managedContext: NSManagedObjectContext!
     
     private init() {
@@ -30,7 +39,28 @@ final class CoreDataManager {
         do {
             try managedContext.save()
             completion()
-            print("added to pavorites")
+            notesDelegate?.coreDataUpdated()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func checkNote(id: Int) -> NotesCoreData? {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "NotesCoreData")
+        fetchRequest.predicate = NSPredicate(format: "gameId == %i", id)
+        guard let result = try? managedContext.fetch(fetchRequest).first as? NotesCoreData else { return nil }
+        return result
+    }
+    
+    func updateNote(id: Int, note: String) {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "NotesCoreData")
+        fetchRequest.predicate = NSPredicate(format: "gameId == %i", id)
+        guard let result = try? managedContext.fetch(fetchRequest).first else { return }
+        result.setValue(note, forKey: "note")
+        
+        do {
+            try managedContext.save()
+            notesDelegate?.coreDataUpdated()
         } catch let error as NSError {
             print(error.localizedDescription)
         }
@@ -60,7 +90,7 @@ final class CoreDataManager {
         
         do {
             try managedContext.save()
-            print("removed from favorites")
+            notesDelegate?.coreDataUpdated()
             completion()
         } catch let error as NSError {
             print(error.localizedDescription)
@@ -83,7 +113,6 @@ final class CoreDataManager {
         do {
             try managedContext.save()
             completion()
-            print("added to pavorites")
         } catch let error as NSError {
             print(error.localizedDescription)
         }
@@ -113,7 +142,6 @@ final class CoreDataManager {
         
         do {
             try managedContext.save()
-            print("removed from favorites")
             completion()
         } catch let error as NSError {
             print(error.localizedDescription)
