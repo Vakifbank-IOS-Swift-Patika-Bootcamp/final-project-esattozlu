@@ -41,6 +41,13 @@ class GameListViewController: BaseViewController {
         viewModel.fetchAllGames(page: 1)
         configureNavigationItem()
         configureGameSearchController()
+        configureLaunchNotification()
+    }
+    
+    func configureLaunchNotification() {
+        LocalNotificationManager.shared.requestNotificationAuthorization()
+        LocalNotificationManager.shared.sendNotification(title: "Welcome!", body: "We are so happy to see you here!")
+        LocalNotificationManager.shared.userNotificationCenter.delegate = self
     }
     
     func configureCollectionView() {
@@ -114,5 +121,12 @@ extension GameListViewController: GameListViewModelDelegate {
     func gamesLoaded() {
         gameListCollectionView.reloadData()
         stopActivityIndicator()
+    }
+}
+
+extension GameListViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.list, .banner, .badge, .sound])
     }
 }
