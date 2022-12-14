@@ -15,6 +15,8 @@ class SearchGamesViewController: BaseViewController {
     private var viewModel: SearchGamesViewModelProtocol = SearchGamesViewModel()
     var timer: Timer?
     var games: [Game]?
+    var page = 1
+    var searchText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +71,18 @@ extension SearchGamesViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presentAddNoteVC(index: indexPath.row)
     }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY >= contentHeight - height - 100 {
+            viewModel.paginationStarted = true
+            page += 1
+            self.viewModel.fetchSearchedGames(query: searchText, page: page)
+        }
+    }
 }
 
 
@@ -83,11 +97,18 @@ extension SearchGamesViewController: UISearchBarDelegate {
         } else {
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
                 self.showActivityIndicator()
-                self.viewModel.fetchSearchedGames(query: searchText, page: 1)
+                self.viewModel.fetchSearchedGames(query: searchText, page: self.page)
+                self.searchText = searchText
                 self.emptyTableViewLabel.isHidden = true
                 self.searchIcon.isHidden = true
             })
         }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        page = 1
+        self.searchText = ""
+        viewModel.paginationStarted = false
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

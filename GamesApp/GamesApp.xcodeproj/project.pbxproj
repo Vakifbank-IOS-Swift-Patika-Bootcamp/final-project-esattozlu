@@ -237,6 +237,15 @@
 			path = "uTİLİTY";
 			sourceTree = "<group>";
 		};
+		E8215B92294A727B00CF43C7 /* FavoritesDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E8F5C13A2943ECEF00F2A835 /* FavoriteDetailsViewController.swift */,
+				E824300E294719AC00947CE9 /* FavoriteDetailViewModel.swift */,
+			);
+			path = FavoritesDetails;
+			sourceTree = "<group>";
+		};
 		E84987D729434B6600D319B0 /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +268,7 @@
 				E876EA06294085310040C012 /* GameList */,
 				E876EA0F2940865F0040C012 /* GameDetails */,
 				E876EA072940853F0040C012 /* Favorites */,
+				E8215B92294A727B00CF43C7 /* FavoritesDetails */,
 				E876EA082940854A0040C012 /* Notes */,
 				E876EA0D294086330040C012 /* Search */,
 				E876EA0E294086450040C012 /* AddNote */,
@@ -293,7 +303,6 @@
 				E876EA21294088210040C012 /* ViewComponents */,
 				E876EA202940881C0040C012 /* Controller */,
 				E876EA1F294088160040C012 /* ViewModel */,
-				E876EA1E294088110040C012 /* Model */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -337,7 +346,6 @@
 				E876EA25294088300040C012 /* ViewComponents */,
 				E876EA242940882E0040C012 /* Controller */,
 				E876EA232940882C0040C012 /* ViewModel */,
-				E876EA22294088290040C012 /* Model */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -426,7 +434,6 @@
 			isa = PBXGroup;
 			children = (
 				E82125E7293F8FB00029A57A /* FavoritesViewController.swift */,
-				E8F5C13A2943ECEF00F2A835 /* FavoriteDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -435,16 +442,8 @@
 			isa = PBXGroup;
 			children = (
 				E84987E02943574200D319B0 /* FavoritesViewModel.swift */,
-				E824300E294719AC00947CE9 /* FavoriteDetailViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		E876EA1E294088110040C012 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E876EA1F294088160040C012 /* ViewModel */ = {
@@ -470,13 +469,6 @@
 				E8DB8EBD2947B0DF00F2BF91 /* NotesTableViewCell.xib */,
 			);
 			path = ViewComponents;
-			sourceTree = "<group>";
-		};
-		E876EA22294088290040C012 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E876EA232940882C0040C012 /* ViewModel */ = {
