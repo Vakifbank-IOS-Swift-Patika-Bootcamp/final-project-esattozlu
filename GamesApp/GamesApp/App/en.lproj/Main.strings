@@ -1,0 +1,93 @@
+
+/* Class = "UIButton"; configuration.title = "Save"; ObjectID = "0KL-rl-b1j"; */
+"0KL-rl-b1j.configuration.title" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "0KL-rl-b1j"; */
+"0KL-rl-b1j.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Game Name"; ObjectID = "0ve-iR-oVm"; */
+"0ve-iR-oVm.text" = "Game Name";
+
+/* Class = "UILabel"; text = "4.8"; ObjectID = "2xM-Bc-0fu"; */
+"2xM-Bc-0fu.text" = "4.8";
+
+/* Class = "UILabel"; text = "655 user suggestion"; ObjectID = "4sO-7z-nH2"; */
+"4sO-7z-nH2.text" = "655 user suggestion";
+
+/* Class = "UINavigationItem"; title = "Notes"; ObjectID = "5nd-jb-gW3"; */
+"5nd-jb-gW3.title" = "Notes";
+
+/* Class = "UILabel"; text = "out of 5"; ObjectID = "94m-9R-phf"; */
+"94m-9R-phf.text" = "out of 5";
+
+/* Class = "UILabel"; text = "10.10.2010"; ObjectID = "BFQ-Tq-iiQ"; */
+"BFQ-Tq-iiQ.text" = "10.10.2010";
+
+/* Class = "UILabel"; text = "97"; ObjectID = "Da8-DB-IMn"; */
+"Da8-DB-IMn.text" = "97";
+
+/* Class = "UILabel"; text = "4.8"; ObjectID = "FLc-B9-I0x"; */
+"FLc-B9-I0x.text" = "4.8";
+
+/* Class = "UITabBarItem"; title = "Notes"; ObjectID = "G3H-so-sbu"; */
+"G3H-so-sbu.title" = "Notes";
+
+/* Class = "UITabBarItem"; title = "Favs"; ObjectID = "I4O-PT-aqz"; */
+"I4O-PT-aqz.title" = "Favs";
+
+/* Class = "UINavigationItem"; title = "Favorite Games"; ObjectID = "Irp-TL-576"; */
+"Irp-TL-576.title" = "Favorite Games";
+
+/* Class = "UITabBarItem"; title = "Games"; ObjectID = "JMp-nO-EGg"; */
+"JMp-nO-EGg.title" = "Games";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "K2n-KV-fjC"; */
+"K2n-KV-fjC.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "Mj0-we-uCK"; */
+"Mj0-we-uCK.title" = "Search";
+
+/* Class = "UILabel"; text = "Game Name"; ObjectID = "NgM-4d-wMT"; */
+"NgM-4d-wMT.text" = "Game Name";
+
+/* Class = "UINavigationItem"; title = "Game List"; ObjectID = "R6X-Sv-HDm"; */
+"R6X-Sv-HDm.title" = "Game List";
+
+/* Class = "UILabel"; text = "4.0"; ObjectID = "ZMu-42-t0P"; */
+"ZMu-42-t0P.text" = "4.0";
+
+/* Class = "UILabel"; text = "Genres"; ObjectID = "asz-Nm-msK"; */
+"asz-Nm-msK.text" = "Genres";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "dxP-eI-qiv"; */
+"dxP-eI-qiv.text" = "-";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "f4Z-AL-a7h"; */
+"f4Z-AL-a7h.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "97"; ObjectID = "fIi-YR-Hbd"; */
+"fIi-YR-Hbd.text" = "97";
+
+/* Class = "UIButton"; configuration.title = " Remove from Favorites"; ObjectID = "hLC-ZA-GX9"; */
+"hLC-ZA-GX9.configuration.title" = " Remove from Favorites";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hLC-ZA-GX9"; */
+"hLC-ZA-GX9.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "5,712 reviews"; ObjectID = "loP-G4-Wmu"; */
+"loP-G4-Wmu.text" = "5,712 reviews";
+
+/* Class = "UILabel"; text = "10.10.2010"; ObjectID = "p3p-um-Yyh"; */
+"p3p-um-Yyh.text" = "10.10.2010";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sir-6A-Sfg"; */
+"sir-6A-Sfg.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Favorite Details"; ObjectID = "tpP-nG-vOb"; */
+"tpP-nG-vOb.title" = "Favorite Details";
+
+/* Class = "UINavigationItem"; title = "Note"; ObjectID = "vcS-HR-Z3n"; */
+"vcS-HR-Z3n.title" = "Note";
+
+/* Class = "UILabel"; text = "Ratings & Reviews"; ObjectID = "xKn-aJ-C7v"; */
+"xKn-aJ-C7v.text" = "Ratings & Reviews";
