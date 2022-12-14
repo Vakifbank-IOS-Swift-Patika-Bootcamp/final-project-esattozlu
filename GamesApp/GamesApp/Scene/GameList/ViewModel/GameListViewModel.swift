@@ -9,6 +9,7 @@ import Foundation
 
 protocol GameListViewModelProtocol {
     var delegate: GameListViewModelDelegate? { get set }
+    var paginationStarted: Bool { get set }
     func fetchTopRatedGames(page: Int)
     func fetchNewlyReleasedGames(page: Int)
     func fetchAllGames(page: Int)
@@ -24,6 +25,7 @@ protocol GameListViewModelDelegate: AnyObject {
 
 final class GameListViewModel: GameListViewModelProtocol {
     var delegate: GameListViewModelDelegate?
+    var paginationStarted = false
     private var games: [Game]?
     
     func fetchTopRatedGames(page: Int) {
@@ -31,7 +33,12 @@ final class GameListViewModel: GameListViewModelProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                self.games = response.games
+                guard let gamesFromResponse = response.games else { return }
+                if self.paginationStarted {
+                    self.games?.append(contentsOf: gamesFromResponse)
+                } else {
+                    self.games = gamesFromResponse
+                }
                 DispatchQueue.main.async {
                     self.delegate?.gamesLoaded()
                 }
@@ -46,7 +53,12 @@ final class GameListViewModel: GameListViewModelProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                self.games = response.games
+                guard let gamesFromResponse = response.games else { return }
+                if self.paginationStarted {
+                    self.games?.append(contentsOf: gamesFromResponse)
+                } else {
+                    self.games = gamesFromResponse
+                }
                 DispatchQueue.main.async {
                     self.delegate?.gamesLoaded()
                 }
@@ -61,7 +73,12 @@ final class GameListViewModel: GameListViewModelProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                self.games = response.games
+                guard let gamesFromResponse = response.games else { return }
+                if self.paginationStarted {
+                    self.games?.append(contentsOf: gamesFromResponse)
+                } else {
+                    self.games = gamesFromResponse
+                }
                 DispatchQueue.main.async {
                     self.delegate?.gamesLoaded()
                 }
@@ -76,7 +93,12 @@ final class GameListViewModel: GameListViewModelProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                self.games = response.games
+                guard let gamesFromResponse = response.games else { return }
+                if self.paginationStarted {
+                    self.games?.append(contentsOf: gamesFromResponse)
+                } else {
+                    self.games = gamesFromResponse
+                }
                 DispatchQueue.main.async {
                     self.delegate?.gamesLoaded()
                 }

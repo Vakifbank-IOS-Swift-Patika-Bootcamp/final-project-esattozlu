@@ -12,24 +12,13 @@ class GameListViewController: BaseViewController {
     @IBOutlet weak var gameListCollectionView: UICollectionView!
     private var viewModel: GameListViewModelProtocol = GameListViewModel()
     var timer: Timer?
+    var page = 1
+    var filterTag = 0
     var filterMenu: UIMenu {
         return UIMenu(title: "Filter".localized(), image: nil, identifier: nil, options: [], children: menuItems)
     }
     var menuItems: [UIAction] {
-        return [
-            UIAction(title: "All Games".localized(), image: UIImage(named: "all"), handler: { (_) in
-                self.showActivityIndicator()
-                self.viewModel.fetchAllGames(page: 1)
-            }),
-            UIAction(title: "Top Rated".localized(), image: UIImage(named: "ranking"), handler: { (_) in
-                self.showActivityIndicator()
-                self.viewModel.fetchTopRatedGames(page: 1)
-            }),
-            UIAction(title: "Newly Released".localized(), image: UIImage(named: "newly"), handler: { (_) in
-                self.showActivityIndicator()
-                self.viewModel.fetchNewlyReleasedGames(page: 1)
-            })
-        ]
+        configureMenuItems()
     }
     
     override func viewDidLoad() {
@@ -42,6 +31,35 @@ class GameListViewController: BaseViewController {
         configureNavigationItem()
         configureGameSearchController()
         configureLaunchNotification()
+    }
+    
+    func configureMenuItems() -> [UIAction] {
+        return [
+            UIAction(title: "All Games".localized(), image: UIImage(named: "all"), handler: { (_) in
+                self.viewModel.paginationStarted = false
+                self.gameListCollectionView.setContentOffset(.zero, animated: true)
+                self.page = 1
+                self.showActivityIndicator()
+                self.viewModel.fetchAllGames(page: self.page)
+                self.filterTag = 0
+            }),
+            UIAction(title: "Top Rated".localized(), image: UIImage(named: "ranking"), handler: { (_) in
+                self.viewModel.paginationStarted = false
+                self.gameListCollectionView.setContentOffset(.zero, animated: true)
+                self.page = 1
+                self.showActivityIndicator()
+                self.viewModel.fetchTopRatedGames(page: self.page)
+                self.filterTag = 1
+            }),
+            UIAction(title: "Newly Released".localized(), image: UIImage(named: "newly"), handler: { (_) in
+                self.viewModel.paginationStarted = false
+                self.gameListCollectionView.setContentOffset(.zero, animated: true)
+                self.page = 1
+                self.showActivityIndicator()
+                self.viewModel.fetchNewlyReleasedGames(page: self.page)
+                self.filterTag = 2
+            })
+        ]
     }
     
     func configureLaunchNotification() {
@@ -97,6 +115,29 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
 
 extension GameListViewController: UICollectionViewDelegateFlowLayout {
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY >= contentHeight - height - 100 {
+            viewModel.paginationStarted = true
+            if filterTag == 0 {
+                page += 1
+                self.showActivityIndicator()
+                self.viewModel.fetchAllGames(page: self.page)
+            } else if filterTag == 1 {
+                page += 1
+                self.showActivityIndicator()
+                self.viewModel.fetchTopRatedGames(page: self.page)
+            } else if filterTag == 2 {
+                page += 1
+                self.showActivityIndicator()
+                self.viewModel.fetchNewlyReleasedGames(page: self.page)
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         viewModel.getSizeForItem(width: view.bounds.width)
     }
@@ -116,6 +157,25 @@ extension GameListViewController: UISearchBarDelegate {
             self.showActivityIndicator()
             self.viewModel.fetchSearchedGames(query: searchText, page: 1)
         })
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if filterTag == 0 {
+            page = 1
+            self.showActivityIndicator()
+            self.gameListCollectionView.setContentOffset(.zero, animated: true)
+            self.viewModel.fetchAllGames(page: page)
+        } else if filterTag == 1 {
+            page = 1
+            self.showActivityIndicator()
+            self.gameListCollectionView.setContentOffset(.zero, animated: true)
+            self.viewModel.fetchTopRatedGames(page: page)
+        } else if filterTag == 2 {
+            page = 1
+            self.showActivityIndicator()
+            self.gameListCollectionView.setContentOffset(.zero, animated: true)
+            self.viewModel.fetchNewlyReleasedGames(page: page)
+        }
     }
 }
 

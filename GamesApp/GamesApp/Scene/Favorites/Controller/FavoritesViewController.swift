@@ -12,35 +12,35 @@ class FavoritesViewController: UIViewController {
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
     private var viewModel: FavoritesViewModelProtocol = FavoritesViewModel()
     var favoriteGames: [FavoritesCoreData]?
+    @IBOutlet weak var emptyFavoritesIcon: UIImageView!
+    @IBOutlet weak var emptyFavoritesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var config = UICollectionLayoutListConfiguration(appearance: .plain)
-        config.trailingSwipeActionsConfigurationProvider = { indexPath in
-            let del = UIContextualAction(style: .destructive, title: "Delete") {
-                [weak self] action, view, completion in
-                self?.delete(at: indexPath)
-                completion(true)
-            }
-            return UISwipeActionsConfiguration(actions: [del])
-        }
         
         viewModel.delegate = self
         fetchGamesFromCoreData()
         configureCollectionView()
     }
     
-    func delete(at: IndexPath) {
-        
-    }
     @objc func fetchGamesFromCoreData() {
         favoriteGames = viewModel.fetchGames()
         DispatchQueue.main.async {
             self.favoritesCollectionView.reloadData()
+            self.checkNote()
         }
     }
     
+    func checkNote() {
+        guard let favorites = favoriteGames else { return }
+        if !favorites.isEmpty {
+            emptyFavoritesIcon.isHidden = true
+            emptyFavoritesLabel.isHidden = true
+        } else {
+            emptyFavoritesIcon.isHidden = false
+            emptyFavoritesLabel.isHidden = false
+        }
+    }
     
     func configureCollectionView() {
         favoritesCollectionView.dataSource = self
@@ -49,6 +49,7 @@ class FavoritesViewController: UIViewController {
         
         favoritesCollectionView.register(UINib(nibName: "SmallGamesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "smallGamesCollectionCell")
         NotificationCenter.default.addObserver(self, selector: #selector(fetchGamesFromCoreData), name: NSNotification.Name(rawValue: "FavoritesChanged"), object: nil)
+        emptyFavoritesLabel.text = "There is no favorite previously added. \nYou can add a game to favorites from game details page.".localized()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,7 +58,6 @@ class FavoritesViewController: UIViewController {
               let favoriteGames = favoriteGames
         else { return }
         favoriteDetailVC.favorite = favoriteGames[index]
-        
     }
 }
 

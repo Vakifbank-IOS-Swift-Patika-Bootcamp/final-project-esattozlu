@@ -9,6 +9,7 @@ import Foundation
 
 protocol SearchGamesViewModelProtocol {
     var delegate: SearchGamesViewModelDelegate? { get set }
+    var paginationStarted: Bool { get set }
     func gamesCount() -> Int
     func getGames(at index: Int) -> Game?
     func fetchSearchedGames(query: String, page: Int)
@@ -21,6 +22,7 @@ protocol SearchGamesViewModelDelegate {
 
 class SearchGamesViewModel: SearchGamesViewModelProtocol {
     var delegate: SearchGamesViewModelDelegate?
+    var paginationStarted = false
     private var games: [Game]?
     
     func fetchSearchedGames(query: String, page: Int) {
@@ -28,7 +30,12 @@ class SearchGamesViewModel: SearchGamesViewModelProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                self.games = response.games
+                guard let gamesFromResponse = response.games else { return }
+                if self.paginationStarted {
+                    self.games?.append(contentsOf: gamesFromResponse)
+                } else {
+                    self.games = gamesFromResponse
+                }
                 DispatchQueue.main.async {
                     self.delegate?.gamesLoaded()
                 }
