@@ -1,0 +1,60 @@
+
+/* Class = "UIButton"; configuration.title = "Added to favorites"; ObjectID = "3Zk-e8-tb8"; */
+"3Zk-e8-tb8.configuration.title" = "Favoriye eklendi";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3Zk-e8-tb8"; */
+"3Zk-e8-tb8.normalTitle" = "Buton";
+
+/* Class = "UILabel"; text = "Publisher(s)"; ObjectID = "4JL-lq-aQ2"; */
+"4JL-lq-aQ2.text" = "Yayıncı(lar)";
+
+/* Class = "UILabel"; text = "655 user suggestion"; ObjectID = "4QN-Oe-Hwm"; */
+"4QN-Oe-Hwm.text" = "655 user suggestion";
+
+/* Class = "UILabel"; text = "out of 5"; ObjectID = "62i-Fl-qXk"; */
+"62i-Fl-qXk.text" = "5 üzerinden";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "7bg-w6-1XX"; */
+"7bg-w6-1XX.text" = "-";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7fo-j0-GTR"; */
+"7fo-j0-GTR.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "Add to favorites"; ObjectID = "ARq-Kf-Q5Y"; */
+"ARq-Kf-Q5Y.configuration.title" = "Favoriye ekle";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ARq-Kf-Q5Y"; */
+"ARq-Kf-Q5Y.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "97"; ObjectID = "BrA-PG-9hu"; */
+"BrA-PG-9hu.text" = "97";
+
+/* Class = "UILabel"; text = "4.0"; ObjectID = "CnO-ek-boH"; */
+"CnO-ek-boH.text" = "4.0";
+
+/* Class = "UILabel"; text = "Ratings & Reviews"; ObjectID = "EI6-ta-wRo"; */
+"EI6-ta-wRo.text" = "Oylama & İnceleme";
+
+/* Class = "UILabel"; text = "Screenshots"; ObjectID = "EdB-Wb-YsW"; */
+"EdB-Wb-YsW.text" = "Ekran Görüntüleri";
+
+/* Class = "UILabel"; text = "EA Games"; ObjectID = "Kla-1T-OXa"; */
+"Kla-1T-OXa.text" = "EA Games";
+
+/* Class = "UILabel"; text = "4.8"; ObjectID = "Wgh-5o-XCM"; */
+"Wgh-5o-XCM.text" = "4.8";
+
+/* Class = "UILabel"; text = "5,712 reviews"; ObjectID = "bFk-vN-4ll"; */
+"bFk-vN-4ll.text" = "5,712 reviews";
+
+/* Class = "UILabel"; text = "About This Game"; ObjectID = "cGI-Lg-36q"; */
+"cGI-Lg-36q.text" = "Oyun Hakkında";
+
+/* Class = "UILabel"; text = "10.10.2010"; ObjectID = "drT-th-8qY"; */
+"drT-th-8qY.text" = "10.10.2010";
+
+/* Class = "UILabel"; text = "Genres"; ObjectID = "f2k-rn-YUg"; */
+"f2k-rn-YUg.text" = "Türler";
+
+/* Class = "UILabel"; text = "Game Name"; ObjectID = "rid-rb-8xI"; */
+"rid-rb-8xI.text" = "Oyun Adı";

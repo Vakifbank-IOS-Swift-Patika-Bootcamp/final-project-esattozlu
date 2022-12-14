@@ -28,12 +28,14 @@
 		E8212625293FCED80029A57A /* GamesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8212624293FCED80029A57A /* GamesResponseModel.swift */; };
 		E8212627293FCF060029A57A /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8212626293FCF060029A57A /* GameDetailModel.swift */; };
 		E824300F294719AC00947CE9 /* FavoriteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824300E294719AC00947CE9 /* FavoriteDetailViewModel.swift */; };
+		E82BF4F8294A1822008CEA91 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = E82BF4FA294A1822008CEA91 /* Localization.strings */; };
+		E82BF500294A1925008CEA91 /* GameCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82BF502294A1925008CEA91 /* GameCollectionCell.xib */; };
+		E82BF505294A196B008CEA91 /* GameDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82BF507294A196B008CEA91 /* GameDetailsView.xib */; };
 		E84987D929434BA700D319B0 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84987D829434BA700D319B0 /* CoreDataManager.swift */; };
 		E84987DE29434FB300D319B0 /* SmallGamesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84987DC29434FB300D319B0 /* SmallGamesCollectionCell.swift */; };
 		E84987E12943574200D319B0 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84987E02943574200D319B0 /* FavoritesViewModel.swift */; };
 		E85749B5294A08B3000E3458 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85749B4294A08B3000E3458 /* LocalNotificationManager.swift */; };
 		E86BB2BC2941D97100DE1C60 /* GameDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86BB2BB2941D97100DE1C60 /* GameDetailsView.swift */; };
-		E86BB2BE2941D98600DE1C60 /* GameDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86BB2BD2941D98600DE1C60 /* GameDetailsView.xib */; };
 		E86F9E1629478632009A2922 /* SmallGamesCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86F9E1529478632009A2922 /* SmallGamesCollectionCell.xib */; };
 		E86F9E192947926F009A2922 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F9E172947926F009A2922 /* SearchTableViewCell.swift */; };
 		E86F9E1A2947926F009A2922 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86F9E182947926F009A2922 /* SearchTableViewCell.xib */; };
@@ -43,7 +45,6 @@
 		E876EA2D2940889B0040C012 /* SearchGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA2C2940889B0040C012 /* SearchGamesViewController.swift */; };
 		E876EA2F294088CE0040C012 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA2E294088CE0040C012 /* NoteListViewController.swift */; };
 		E876EA32294089A30040C012 /* GameCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA30294089A30040C012 /* GameCollectionCell.swift */; };
-		E876EA33294089A30040C012 /* GameCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E876EA31294089A30040C012 /* GameCollectionCell.xib */; };
 		E876EA352940942B0040C012 /* GameListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA342940942B0040C012 /* GameListViewModel.swift */; };
 		E876EA3B2940D1790040C012 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA3A2940D1790040C012 /* BaseViewController.swift */; };
 		E876EA3D2940F0C00040C012 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876EA3C2940F0C00040C012 /* String + Ext.swift */; };
@@ -97,12 +98,19 @@
 		E8212624293FCED80029A57A /* GamesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesResponseModel.swift; sourceTree = "<group>"; };
 		E8212626293FCF060029A57A /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		E824300E294719AC00947CE9 /* FavoriteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailViewModel.swift; sourceTree = "<group>"; };
+		E82BF4F9294A1822008CEA91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		E82BF4FB294A18DC008CEA91 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		E82BF4FC294A18DC008CEA91 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E82BF501294A1925008CEA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GameCollectionCell.xib; sourceTree = "<group>"; };
+		E82BF504294A192B008CEA91 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/GameCollectionCell.strings; sourceTree = "<group>"; };
+		E82BF506294A196B008CEA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GameDetailsView.xib; sourceTree = "<group>"; };
+		E82BF509294A196F008CEA91 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/GameDetailsView.strings; sourceTree = "<group>"; };
+		E82BF50A294A1C36008CEA91 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localization.strings; sourceTree = "<group>"; };
 		E84987D829434BA700D319B0 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E84987DC29434FB300D319B0 /* SmallGamesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallGamesCollectionCell.swift; sourceTree = "<group>"; };
 		E84987E02943574200D319B0 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		E85749B4294A08B3000E3458 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		E86BB2BB2941D97100DE1C60 /* GameDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsView.swift; sourceTree = "<group>"; };
-		E86BB2BD2941D98600DE1C60 /* GameDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameDetailsView.xib; sourceTree = "<group>"; };
 		E86F9E1529478632009A2922 /* SmallGamesCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmallGamesCollectionCell.xib; sourceTree = "<group>"; };
 		E86F9E172947926F009A2922 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		E86F9E182947926F009A2922 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -112,7 +120,6 @@
 		E876EA2C2940889B0040C012 /* SearchGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGamesViewController.swift; sourceTree = "<group>"; };
 		E876EA2E294088CE0040C012 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 		E876EA30294089A30040C012 /* GameCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionCell.swift; sourceTree = "<group>"; };
-		E876EA31294089A30040C012 /* GameCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameCollectionCell.xib; sourceTree = "<group>"; };
 		E876EA342940942B0040C012 /* GameListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewModel.swift; sourceTree = "<group>"; };
 		E876EA3A2940D1790040C012 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E876EA3C2940F0C00040C012 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
@@ -319,7 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				E876EA30294089A30040C012 /* GameCollectionCell.swift */,
-				E876EA31294089A30040C012 /* GameCollectionCell.xib */,
+				E82BF502294A1925008CEA91 /* GameCollectionCell.xib */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -385,7 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				E86BB2BB2941D97100DE1C60 /* GameDetailsView.swift */,
-				E86BB2BD2941D98600DE1C60 /* GameDetailsView.xib */,
+				E82BF507294A196B008CEA91 /* GameDetailsView.xib */,
 				E807FE772942703E00F8C898 /* ScreenshotsCollectionCell.swift */,
 				E807FE782942703E00F8C898 /* ScreenshotsCollectionCell.xib */,
 			);
@@ -399,6 +406,7 @@
 				E82125E5293F8FB00029A57A /* SceneDelegate.swift */,
 				E82125E9293F8FB00029A57A /* Main.storyboard */,
 				E82125F1293F8FB10029A57A /* LaunchScreen.storyboard */,
+				E82BF4FA294A1822008CEA91 /* Localization.strings */,
 				E82125EF293F8FB10029A57A /* Assets.xcassets */,
 				E82125EC293F8FB00029A57A /* GamesApp.xcdatamodeld */,
 			);
@@ -615,6 +623,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = E82125D7293F8FB00029A57A;
 			packageReferences = (
@@ -638,11 +647,12 @@
 			files = (
 				E82125F3293F8FB10029A57A /* LaunchScreen.storyboard in Resources */,
 				E86F9E1A2947926F009A2922 /* SearchTableViewCell.xib in Resources */,
-				E876EA33294089A30040C012 /* GameCollectionCell.xib in Resources */,
-				E86BB2BE2941D98600DE1C60 /* GameDetailsView.xib in Resources */,
+				E82BF500294A1925008CEA91 /* GameCollectionCell.xib in Resources */,
+				E82BF505294A196B008CEA91 /* GameDetailsView.xib in Resources */,
 				E82125F0293F8FB10029A57A /* Assets.xcassets in Resources */,
 				E82125EB293F8FB00029A57A /* Main.storyboard in Resources */,
 				E807FE7A2942703E00F8C898 /* ScreenshotsCollectionCell.xib in Resources */,
+				E82BF4F8294A1822008CEA91 /* Localization.strings in Resources */,
 				E86F9E1629478632009A2922 /* SmallGamesCollectionCell.xib in Resources */,
 				E8DB8EBF2947B0DF00F2BF91 /* NotesTableViewCell.xib in Resources */,
 			);
@@ -742,6 +752,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E82125EA293F8FB00029A57A /* Base */,
+				E82BF4FB294A18DC008CEA91 /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -750,8 +761,36 @@
 			isa = PBXVariantGroup;
 			children = (
 				E82125F2293F8FB10029A57A /* Base */,
+				E82BF4FC294A18DC008CEA91 /* tr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E82BF4FA294A1822008CEA91 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E82BF4F9294A1822008CEA91 /* en */,
+				E82BF50A294A1C36008CEA91 /* tr */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
+		E82BF502294A1925008CEA91 /* GameCollectionCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E82BF501294A1925008CEA91 /* Base */,
+				E82BF504294A192B008CEA91 /* tr */,
+			);
+			name = GameCollectionCell.xib;
+			sourceTree = "<group>";
+		};
+		E82BF507294A196B008CEA91 /* GameDetailsView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E82BF506294A196B008CEA91 /* Base */,
+				E82BF509294A196F008CEA91 /* tr */,
+			);
+			name = GameDetailsView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -761,6 +800,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -821,6 +861,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

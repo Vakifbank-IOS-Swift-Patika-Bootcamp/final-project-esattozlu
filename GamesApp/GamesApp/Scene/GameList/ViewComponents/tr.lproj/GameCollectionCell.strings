@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Action, Family, Adventure"; ObjectID = "9nj-st-c3J"; */
+"9nj-st-c3J.text" = "Action, Family, Adventure";
+
+/* Class = "UILabel"; text = "Platform:"; ObjectID = "Osb-27-3HW"; */
+"Osb-27-3HW.text" = "Platform:";
+
+/* Class = "UILabel"; text = "PC, Playstation, XBox"; ObjectID = "hew-4R-hmX"; */
+"hew-4R-hmX.text" = "PC, Playstation, XBox";
+
+/* Class = "UILabel"; text = "4.8"; ObjectID = "mrM-0t-zLR"; */
+"mrM-0t-zLR.text" = "4.8";
+
+/* Class = "UILabel"; text = "Game Name"; ObjectID = "q6O-32-9Ay"; */
+"q6O-32-9Ay.text" = "Oyun Adı";
+
+/* Class = "UILabel"; text = "97"; ObjectID = "rbl-0c-241"; */
+"rbl-0c-241.text" = "97";
+
+/* Class = "UILabel"; text = "Genre:"; ObjectID = "rtd-6S-XYC"; */
+"rtd-6S-XYC.text" = "Tür:";
+
+/* Class = "UILabel"; text = "10.10.2010"; ObjectID = "vOV-YO-VAv"; */
+"vOV-YO-VAv.text" = "10.10.2010";

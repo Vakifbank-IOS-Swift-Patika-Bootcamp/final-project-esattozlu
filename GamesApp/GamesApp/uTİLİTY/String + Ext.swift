@@ -15,4 +15,12 @@ extension String {
       let result = nonDiacritic.replacingOccurrences(of: pattern, with: "", options: [.regularExpression])
       return result
   }
+    
+    func localized() -> String {
+        return NSLocalizedString(self, tableName: "Localization", bundle: .main, value: self, comment: self)
+    }
+    
+    static func localizedWithParameter(string: String, parameter: String) -> String {
+        return String.localizedStringWithFormat(NSLocalizedString(string, tableName: "Localization", bundle: .main, value: string, comment: ""), parameter)
+    }
 }

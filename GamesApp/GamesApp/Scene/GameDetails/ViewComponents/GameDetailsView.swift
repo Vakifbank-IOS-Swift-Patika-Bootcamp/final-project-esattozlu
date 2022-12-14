@@ -72,8 +72,9 @@ class GameDetailsView: UIView {
         gameNameLabel.text          = gameDetail.name
         metacriticsLabel.text       = gameDetail.metacriticString
         genresLabel.text            = gameDetail.genreText
-        suggestionLabel.text        = "\(gameDetail.suggestionCountString) user suggestions"
-        reviewsLabel.text           = "\(gameDetail.reviewsCountString) reviews"
+        suggestionLabel.text        = String.localizedWithParameter(string: "%@ suggestions", parameter: gameDetail.suggestionCountString)
+        reviewsLabel.text           = String.localizedWithParameter(string: "%@ reviews", parameter: gameDetail.reviewsCountString)
+
         publishersLabel.text        = gameDetail.publishersString
         gameDescriptionLabel.text   = gameDetail.descriptionRaw
     }
