@@ -28,12 +28,12 @@ class SearchGamesViewController: BaseViewController {
         searchTableView.dataSource = self
         
         searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "searchTableViewCell")
-        emptyTableViewLabel.text = "Please search a game to add note."
+        emptyTableViewLabel.text = "Please search a game to add note.".localized()
     }
     
     func configureGameSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "Search a game to add note."
+        searchController.searchBar.placeholder = "Search a game to add note.".localized()
         searchController.searchBar.delegate = self
         searchController.searchBar.becomeFirstResponder()
         navigationItem.searchController = searchController

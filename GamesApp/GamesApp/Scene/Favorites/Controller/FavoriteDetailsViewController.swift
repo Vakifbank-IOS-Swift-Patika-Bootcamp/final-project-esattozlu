@@ -39,8 +39,8 @@ class FavoriteDetailsViewController: UIViewController {
         metacriticLabel.text = favorite.metacritic
         genreLabel.text = favorite.genres
         raitingBelowLabel.text = favorite.raiting
-        suggestionLabel.text = "\(favorite.suggestions ?? "0") suggestions"
-        reviewsLabel.text = "\(favorite.reviews ?? "0") raitings"
+        suggestionLabel.text = String.localizedWithParameter(string: "%@ suggestions", parameter: favorite.suggestions ?? "0")
+        reviewsLabel.text = String.localizedWithParameter(string: "%@ reviews", parameter: favorite.reviews ?? "0")
     }
     
     @IBAction func removeFromFavoritesButtonClicked(_ sender: Any) {

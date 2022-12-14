@@ -13,19 +13,19 @@ class GameListViewController: BaseViewController {
     private var viewModel: GameListViewModelProtocol = GameListViewModel()
     var timer: Timer?
     var filterMenu: UIMenu {
-        return UIMenu(title: "Filter", image: nil, identifier: nil, options: [], children: menuItems)
+        return UIMenu(title: "Filter".localized(), image: nil, identifier: nil, options: [], children: menuItems)
     }
     var menuItems: [UIAction] {
         return [
-            UIAction(title: "All Games", image: UIImage(named: "all"), handler: { (_) in
+            UIAction(title: "All Games".localized(), image: UIImage(named: "all"), handler: { (_) in
                 self.showActivityIndicator()
                 self.viewModel.fetchAllGames(page: 1)
             }),
-            UIAction(title: "Top Rated", image: UIImage(named: "ranking"), handler: { (_) in
+            UIAction(title: "Top Rated".localized(), image: UIImage(named: "ranking"), handler: { (_) in
                 self.showActivityIndicator()
                 self.viewModel.fetchTopRatedGames(page: 1)
             }),
-            UIAction(title: "Newly Released", image: UIImage(named: "newly"), handler: { (_) in
+            UIAction(title: "Newly Released".localized(), image: UIImage(named: "newly"), handler: { (_) in
                 self.showActivityIndicator()
                 self.viewModel.fetchNewlyReleasedGames(page: 1)
             })
@@ -41,6 +41,15 @@ class GameListViewController: BaseViewController {
         viewModel.fetchAllGames(page: 1)
         configureNavigationItem()
         configureGameSearchController()
+        configureLaunchNotification()
+    }
+    
+    func configureLaunchNotification() {
+        let title = "Welcome!".localized()
+        let body = "We are so happy to see you here!".localized()
+        LocalNotificationManager.shared.requestNotificationAuthorization()
+        LocalNotificationManager.shared.sendNotification(title: title, body: body)
+        LocalNotificationManager.shared.userNotificationCenter.delegate = self
     }
     
     func configureCollectionView() {
@@ -57,7 +66,7 @@ class GameListViewController: BaseViewController {
     
     func configureGameSearchController() {
         let gameSearchController = UISearchController(searchResultsController: nil)
-        gameSearchController.searchBar.placeholder = "Type an employee name to search."
+        gameSearchController.searchBar.placeholder = "Type a game name to search.".localized()
         gameSearchController.searchBar.delegate = self
         navigationItem.searchController = gameSearchController
     }
@@ -114,5 +123,12 @@ extension GameListViewController: GameListViewModelDelegate {
     func gamesLoaded() {
         gameListCollectionView.reloadData()
         stopActivityIndicator()
+    }
+}
+
+extension GameListViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.list, .banner, .badge, .sound])
     }
 }
