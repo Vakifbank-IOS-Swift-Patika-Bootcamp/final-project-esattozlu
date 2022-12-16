@@ -65,7 +65,6 @@ class GameListViewController: BaseViewController {
     func configureLaunchNotification() {
         let title = "Welcome!".localized()
         let body = "We are so happy to see you here!".localized()
-        LocalNotificationManager.shared.requestNotificationAuthorization()
         LocalNotificationManager.shared.sendNotification(title: title, body: body)
         LocalNotificationManager.shared.userNotificationCenter.delegate = self
     }
