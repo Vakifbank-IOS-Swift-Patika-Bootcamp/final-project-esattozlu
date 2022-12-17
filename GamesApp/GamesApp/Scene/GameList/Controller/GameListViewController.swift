@@ -30,7 +30,7 @@ class GameListViewController: BaseViewController {
         viewModel.fetchAllGames(page: 1)
         configureNavigationItem()
         configureGameSearchController()
-        configureLaunchNotification()
+        viewModel.sendNotification(title: "Welcome!", body: "We are so happy to see you here!", delegate: self)
     }
     
     func configureMenuItems() -> [UIAction] {
@@ -60,13 +60,6 @@ class GameListViewController: BaseViewController {
                 self.filterTag = 2
             })
         ]
-    }
-    
-    func configureLaunchNotification() {
-        let title = "Welcome!".localized()
-        let body = "We are so happy to see you here!".localized()
-        LocalNotificationManager.shared.sendNotification(title: title, body: body)
-        LocalNotificationManager.shared.userNotificationCenter.delegate = self
     }
     
     func configureCollectionView() {

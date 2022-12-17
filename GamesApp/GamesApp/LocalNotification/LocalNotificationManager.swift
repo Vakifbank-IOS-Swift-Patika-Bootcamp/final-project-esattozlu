@@ -8,13 +8,18 @@
 import Foundation
 import UserNotifications
 
-final class LocalNotificationManager {
-    
+protocol LocalNotificationProtocol {
+    var userNotificationCenter: UNUserNotificationCenter { get set }
+    func requestNotificationAuthorization()
+    func sendNotification(title: String, body: String)
+}
+
+final class LocalNotificationManager: LocalNotificationProtocol {
     static let shared = LocalNotificationManager()
     
     private init() {}
     
-    let userNotificationCenter = UNUserNotificationCenter.current()
+    var userNotificationCenter = UNUserNotificationCenter.current()
     
     func requestNotificationAuthorization() {
         let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
@@ -25,8 +30,8 @@ final class LocalNotificationManager {
     
     func sendNotification(title: String, body: String) {
             let notificationContent = UNMutableNotificationContent()
-            notificationContent.title = "Welcome!"
-            notificationContent.body = "We are so happy to see you here!"
+            notificationContent.title = title
+            notificationContent.body = body
             notificationContent.sound = UNNotificationSound.default
             
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)

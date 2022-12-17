@@ -10,7 +10,6 @@ import Foundation
 protocol FavoritesViewModelProtocol {
     var delegate: FavoritesViewModelDelegate? { get set }
     func fetchGames() -> [FavoritesCoreData]?
-    func removeGame(id: Int)
     func getSizeForItem(width: CGFloat) -> CGSize
 }
 
@@ -26,12 +25,6 @@ class FavoritesViewModel: FavoritesViewModelProtocol {
         favoriteGames = CoreDataManager.shared.getGames{}
         
         return favoriteGames
-    }
-    
-    func removeGame(id:Int) {
-        CoreDataManager.shared.removeFromFavorites(id: id) {
-            delegate?.favoritesChanged()
-        }
     }
     
     func getSizeForItem(width: CGFloat) -> CGSize {
