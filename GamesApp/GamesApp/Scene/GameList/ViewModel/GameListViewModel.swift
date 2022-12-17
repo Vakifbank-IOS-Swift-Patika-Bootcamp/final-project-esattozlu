@@ -6,14 +6,17 @@
 //
 
 import Foundation
+import UserNotifications
 
 protocol GameListViewModelProtocol {
     var delegate: GameListViewModelDelegate? { get set }
     var paginationStarted: Bool { get set }
+    var notificationManager: LocalNotificationProtocol { get set }
     func fetchTopRatedGames(page: Int)
     func fetchNewlyReleasedGames(page: Int)
     func fetchAllGames(page: Int)
     func fetchSearchedGames(query: String, page: Int)
+    func sendNotification(title: String, body: String, delegate: UNUserNotificationCenterDelegate)
     func gamesCount() -> Int
     func getGames(at index: Int) -> Game?
     func getSizeForItem(width: CGFloat) -> CGSize
@@ -24,9 +27,21 @@ protocol GameListViewModelDelegate: AnyObject {
 }
 
 final class GameListViewModel: GameListViewModelProtocol {
+    var notificationManager: LocalNotificationProtocol
     var delegate: GameListViewModelDelegate?
     var paginationStarted = false
     private var games: [Game]?
+    
+    init() {
+        self.notificationManager = LocalNotificationManager.shared
+    }
+    
+    func sendNotification(title: String, body: String, delegate: UNUserNotificationCenterDelegate) {
+        let title = title.localized()
+        let body = body.localized()
+        notificationManager.userNotificationCenter.delegate = delegate
+        notificationManager.sendNotification(title: title, body: body)
+    }
     
     func fetchTopRatedGames(page: Int) {
         GameService.topRated(page: page) { [weak self] result in
