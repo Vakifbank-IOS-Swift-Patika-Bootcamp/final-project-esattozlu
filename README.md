@@ -1,59 +1,135 @@
-# final-project
 
-Vakıfbank IOS Swift Bootcamp Bitirme Projesi
+# Final Project
 
-Genel Detaylar:
-3 ana ekrandan oluşan public API tabanlı bir uygulaması yapılması beklenmektedir.(API
-sonradan kararlaştırılacaktır.)
-Aşağıda yazılmış olan tüm maddeler ideal uygulamayı tarif etmekle beraber; herkes
-başardığı özelliklere göre değerlendirilecektir.
-Yapılmış maddelerin başarılı uygulanmış olması tüm maddeleri tamamlamaktan daha
-önemlidir.
-Git Kullanımı:
-- Uygulama github.com sayfasına public repo olarak yüklenmelidir.
-- Git commitleri atomic olmalı ve genel commit mesajları kurallarına dikkat
-edilmelidir. - Commit mesajları atılırken branch yapısına dikkat edilmelidir.
-(Develop, Feature vb. branch’ler oluşturulmalıdır.)
-1. Ekran: (Liste Ekranı)
-- MVVM pattern’i ile yazılmalıdır.
-- Item’lar arasında arama yapılabilmelidir.
-- Item’ları sıralama butonu ile sıralanabilmelidir.
-- Sadece item’lar güncellendiğinde görünüm güncellenmelidir. (Ekrana her
-girişte güncelleme olmamalı)
-2. Ekran: (Detay Ekranı)
-- MVVM pattern’i ile yazılmalıdır.
-- Item’a basıldığında ilgili detaya yönlenmelidir.(Alanlar belirtilecektir.)
-- Edit işlemleri için aynı ekran kullanılacaktır.
-- Düzenlemede tüm alanlar eklenmemişse item kaydedilmemelidir.
-3. Ekran: (Yeni Giriş Ekranı)
-- MVVM pattern’i ile yazılmalıdır.
-- Ekran present şekilde açılmalıdır.
-- Ekleme tüm alanlar eklenmemişse item kaydedilmemelidir.
-Uygulama gereklilikleri:
-- SPM veya Cocoapods kullanılmalıdır.
-- Uygulamada hata mesajları ve bekleme esnasında activity indicator
+## Games App - Episode Notes
+Games App, bütün platform oyunlarının aratılabildiği, yüksek puanlı, yeni çıkan gibi kriterlere göre filtrelenerek listelenebildiği, oyun detayları incelenerek favoriye alınabilen, oyunlar hakkında notlar alınabilen bir iOS uygulamasıdır.
+Uygulamada localization mevcuttur. Cihaz diline göre ingilizce veya türkçe olarak kullanılabilir.
+Uygulama Onboarding ekranı ile açılır. Onboarding tamamlandıktan sonra ana tablara geçiş yapılır.
+Uygulama Games, Favs, Notes Tablarına bağlı ekranlardan oluşur.
+Uygulama ekranlarını aşağıdan inceleyebilirsiniz.
 
-kullanılmalıdır.. - İşlemler CoreData ile yapılmalıdır.
-- CoreData’ya bir CoreDataManager üzerinden erişilmelidir.
-- Local push entegrasyonu sağlanmalıdır.
-- Notification yönetimi bir localNotificationManager aracılığıyla
-yapılmalıdır. - Localization sağlanmalıdır.
-- ViewModel localNotificationManager’a notificationManager protokolü üzerinden
-erişmelidir.
-- Uygulamanın unit test yaklaşımı ve coverage yüzdesi değerlendirme kriterleri
-arasındadır.
-- UI ve animasyon tamamen tercihe bağlı olup farklı cihaz görünümleri
-gözetilmelidir.
+### Onboarding
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208307913-eefac758-75c7-4c6a-b6f8-ba6732c9e092.png" alt="drawing" width="275"/></td>  
+<td><img src="https://user-images.githubusercontent.com/96587699/208307912-9b9142e5-fdc8-415c-b79f-442f1549216c.png" alt="drawing" width="275"/></td>  
+</td>  
+</tr>
+</table>
 
-1- API - https://rawg.io/apidocs - Dokümantasyon Chrome ile açılmalıdır.
-2- Git reposu public gözüküyor ancak ödevler nasıl yükleniyorsa aynı sistem kullanılacaktır.
-3- ReadMe dosyası repoda olmalıdır.
-4- Liste ekranı için istenilen filtre kullanılabilir(2022 de çıkan oyunlar, platforma özel
-oyunlar veya popüler oyunlar olabilir.)
-5- Detay ekranında Fotoğraf ve en az 4 bilgi olacak.
-6- Listeden detaya gidildiğinde favorilere ekleme olacak başka bir editleme olmayacak.(2.
-Ekrandaki editleme maddesi)
-7- Favorilerin listelendiği bir ekran olacak.
-8- Liste şeklinde Notlar ekranı olacak. Oyunlara ait not ekleyebileceğim ve mevcut notları
-düzenleyebileceğim.(Dokümandaki 3. Ekran Yeni giriş ekranı bu kısımda olacak)
-9- Hatalar yakalanmalı ve alert şeklinde gösterilmelidir.
+- Uygulama 3sn'lik LaunchScreen sonrasında Onboarding Ekranı ile açılır.
+- Onboarding ekranı 3 sayfadan oluşur. Sayfalar CollectionView'de Horizontal olarak yönetilir. İster kaydırılarak, ister next butonu ile sayfalar ilerletilebilir.
+- Son sayfada buton "Get started" olarak değiştirilerek uygulamanın ilk Tab'ı olan Games'e yönlendirme yapılır.
+
+## Games Tab
+</div>
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208307909-d1021786-91e7-48e6-baf5-defdcb0dafaa.png" alt="drawing" width="275
+"/></td>  
+<td><img src="https://user-images.githubusercontent.com/96587699/208307907-00ca5326-80dc-45f1-b74a-623608d266ee.png" alt="drawing" width="275
+"/></td>  
+<td><img src="https://user-images.githubusercontent.com/96587699/208309014-2bf18a2a-ddea-4458-9a68-3b4ed9da709d.png" alt="drawing" width="275
+"/></td>  
+</tr>
+</table>
+</div>
+
+- Games Tab default olarak bütün oyunların listelendiği sayfadır.
+- Sayfa açılışında "Welcome!" Local Notification'ı çalışır.
+- Ekranda pagination mevcuttur. Oyunlar 20'li olarak sayfa sonuna inildikçe fetch edilir.
+- Navigation'da bulunan Search Bar'dan oyun araması yapılabilir.
+- Arama yapılırken her harf tuşlamasında istek göndermemek için her klavye tuşu basımından sonra 0.5sn bekler. Daha sonra istek atılarak aranan oyunlar listelenir.
+- Sağ navigation itemı olan listeleme menüsünden bütün oyunlar, çok oy alanlar ve yeni çıkanlar filtrelenebilir.
+- Filtreler veya arama uygulanırken istek esnasında sayfa koyulaşarak indicator gösterimi sağlanır.
+- Sayfanın altlarına inildikten sonra yeni filtre uygulandığında sayfa otomatik olarak yukarı kayar ve yeni liste baştan listelenmiş olur.
+- Bir oyunun üzerine tıklayınca detay sayfasına geçiş sağlanır.
+
+### Game Details Sayfası
+</div>
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208307904-f2a0f848-c99d-41bd-94f6-a206f658f7dd.png" alt="drawing" width="275
+"/></td>  
+<td><img src="https://user-images.githubusercontent.com/96587699/208307901-a5a88130-792c-4d72-862e-bce8b0228be8.png" alt="drawing" width="275
+"/></td>  
+</tr>
+</table>
+</div>
+
+- Oyun detay sayfasında Oyun Adı, Yayın Tarihi, Raiting ve Metacritic puanları, oyun detay metni, genre bilgileri, ekran görüntüleri, raiting ve review detayları ve yayıncı bilgileri bulunur. Sayfa scroll edilerek detaylar incelenebilir.
+- Add to favorite butonuna tıklayarak oyun CoreData'ya kaydedilebilir ve Favori sayfasına eklenebilir. Buton tıklandıktan sonra added to favorite butonuna dönüşür. Yine bu butona tekrar tıklanarak favorilerden ve CoreData'dan silinebilir.
+- Sayfanın altında bulunan ekran görüntüleri compositional layout ile horizontal collection view olarak gösterilir.
+- Servisten yyyy-mm-dd formatında gelen tarih extention ile dönüştürülerek görselde görülen formata çevrilmiştir.
+
+## Favorites Tab
+</div>
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208307899-1971a3d9-6e85-49e3-9b10-99a9d3474d0e.png" alt="drawing" width="275
+"/></td>  
+<td><img src="https://user-images.githubusercontent.com/96587699/208307898-3df7cba1-1d31-4f81-be48-e49c58cd6fb5.png" alt="drawing" width="275
+"/></td> 
+</tr>
+</table>
+</div>
+
+- Favorites Tab'ında oyun detay sayfasından favoriye eklenen oyunlar collection view ile listelenir.
+- Favorilerden birine tıklanarak özet detay sayfası modal olarak açılır. Modal açılan ekranda bulunan "Remove From Favorites" butonuna tıklanarak buradan da oyunlar favoriden çıkarılabilir.
+
+## Notes Tab
+</div>
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208307897-2e1ef6fe-81a8-42ed-bf6d-57fea08019d7.png" alt="drawing" width="275
+"/></td>  
+<td><img src="https://user-images.githubusercontent.com/96587699/208307889-75c99234-f38a-4973-9014-e9d467be48b7.png" alt="drawing" width="275
+"/></td> 
+<td><img src="https://user-images.githubusercontent.com/96587699/208307885-3727b001-87e0-419e-a477-46c059672353.png" alt="drawing" width="275
+"/></td> 
+</tr>
+</table>
+</div>
+
+- Notes Tab not eklenen oyunların listelendiği ekrandır. Yeni bir oyuna not eklemek için ekranda bulunan ekle (+) butonu ile oyun arama sayfasına yönlenme sağlanır.
+- Not eklenen oyunlar sola kaydırılarak silinebilir.
+- Notların üzerine tıklandığında not ekleme ekranı dolu şekilde editleme yapmak üzere açılır. Save ederek güncelleme sağlanabilir veya çıkış (x) butonu ile güncelleme yapılmadan ekran kapatılabilir.
+- Boş ve dolu olarak yukarıdaki görselde görebilirsiniz.
+
+</div>
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208307894-abe395d8-6e5e-42be-8920-7344d704bf2f.png" alt="drawing" width="275
+"/></td> 
+<td><img src="https://user-images.githubusercontent.com/96587699/208307892-01679d6d-d70c-4829-9b28-1402b365f331.png" alt="drawing" width="275
+"/></td> 
+<td><img src="https://user-images.githubusercontent.com/96587699/208307881-cf31ec8b-e1d4-48a5-a4ce-af6c2f822e2b.png" alt="drawing" width="275
+"/></td> 
+</tr>
+</table>
+</div>
+
+- Bir oyuna not eklemek için arama ekranından bir oyun aratılır.
+- Aranan oyuna tıklanarak not ekleme ekranı açılır.
+- Not ekleme ekranında oyuna daha önce not eklenip eklenmediği kontrolü yapılır. Eğer eklenmişse daha önce eklenen not editlenmek üzere açılır. Eğer eklenmemişse boş şekilde yeni not eklemek için açılır.
+- Eklenen notlar CoreData'ya kaydedilir.
+- Bu sayede bir oyuna tek bir not eklenir ve istenirse üzerine ekleme yapılabilir. Böylece aynı oyuna fazladan not eklenmesiyle oluşabilecek karışıklık ortadan kaldırılır.
+
+## Detaylar
+- Uygulama macOS Ventura 13.0.1 ve XCode 14.1 sürümü ile oluşturulmuştur.
+- Uygulama içinde servisten gelen tarihi düzenlemek için Date Extention'ı bulunuyor.
+- İçinde indicator, alert ve keyboard gestures bulunan bir BaseViewController oluşturulmuştur. Alert, indicator veya keyboard gesture kullanılan ekranlar bu ViewController'dan inherit edilmiştir.
+- Aramalar yapılırken ",-*<>%&/..." gibi özel karakterleri servise göndermemek için  string extention'ı oluşturulmuştur.
+- Stringleri localize edebilmek için localize methodu string extention'ına eklenmiştir.
+- Parametreli localize string alabilmek için ayrıca localizedWithParameter fonksiyonu oluşturulmuştur.
+- Görseli gelmeyen oyunların resimlerini default olarak gösterebilmek için Asset'de bulunan "emptyImage" görselini URL'e çevirmeyi sağlayan static createLocalUrl fonksiyonu bulunan AssetExtractor class'ı oluşturulmuştur.
+- Games Tab'ında sayfanın altlarına inildikten sonra yeni filtre uygulandığında sayfa otomatik olarak yukarı kayar ve yeni liste baştan listelenmiş olur.
+- Arama yapılırken her harf tuşlamasında istek göndermemek için her klavye tuşu basımından sonra 0.5sn bekler. Daha sonra istek atılarak aranan oyunlar listelenir.
+- Not ekleme ekranında oyuna daha önce not eklenip eklenmediği kontrolü yapılır. Eğer eklenmişse daha önce eklenen not editlenmek üzere açılır. Eğer eklenmemişse boş şekilde yeni not eklemek için açılır.
+- Uygulamada bulunan bütün ViewModel'lere unit test yazılmış ve uygulamanın %40,9'u cover edilmiştir.
