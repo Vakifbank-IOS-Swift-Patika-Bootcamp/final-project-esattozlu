@@ -141,6 +141,7 @@ https://user-images.githubusercontent.com/96587699/208317133-5a7e7c24-610c-4e24-
 - Görseli gelmeyen oyunların resimlerini default olarak gösterebilmek için Asset'de bulunan "emptyImage" görselini URL'e çevirmeyi sağlayan static createLocalUrl fonksiyonu bulunan AssetExtractor class'ı oluşturulmuştur.
 - Games Tab'ında sayfanın altlarına inildikten sonra yeni filtre uygulandığında sayfa otomatik olarak yukarı kayar ve yeni liste baştan listelenmiş olur.
 - Arama yapılırken her harf tuşlamasında istek göndermemek için her klavye tuşu basımından sonra 0.5sn bekler. Daha sonra istek atılarak aranan oyunlar listelenir.
+- Listeleme ekranlarında pagination mevcuttur. Oyunlar 20'li olarak sayfa sonuna inildikçe fetch edilir.
 - Not ekleme ekranında oyuna daha önce not eklenip eklenmediği kontrolü yapılır. Eğer eklenmişse daha önce eklenen not editlenmek üzere açılır. Eğer eklenmemişse boş şekilde yeni not eklemek için açılır.
 - Uygulamada bulunan bütün ViewModel'lere unit test yazılmış ve uygulamanın %40,9'u cover edilmiştir.
 ## Dark Mode Ekran Görüntüleri
