@@ -80,8 +80,9 @@ struct GameDetail: Codable {
         }
     }
     
-    var backgroundUrl: URL {
-        return URL(string: backgroundImage ?? "")!
+    var backgroundUrl: URL? {
+        guard let backgroundImage = backgroundImage else { return AssetExtractor.createLocalUrl(forImageNamed: "emptyImage")}
+        return URL(string: backgroundImage)
     }
 
     var genreText: String? {
