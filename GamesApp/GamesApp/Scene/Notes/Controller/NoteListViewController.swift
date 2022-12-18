@@ -7,11 +7,11 @@
 
 import UIKit
 
-class NoteListViewController: UIViewController {
+final class NoteListViewController: UIViewController {
 
-    @IBOutlet weak var notesTableView: UITableView!
-    @IBOutlet weak var emptyNoteMessageLabel: UILabel!
-    @IBOutlet weak var emptyNoteImage: UIImageView!
+    @IBOutlet private weak var notesTableView: UITableView!
+    @IBOutlet private weak var emptyNoteMessageLabel: UILabel!
+    @IBOutlet private weak var emptyNoteImage: UIImageView!
     var notes: [NotesCoreData]?
     var viewModel: NoteListViewModelProtocol = NoteListViewModel()
     

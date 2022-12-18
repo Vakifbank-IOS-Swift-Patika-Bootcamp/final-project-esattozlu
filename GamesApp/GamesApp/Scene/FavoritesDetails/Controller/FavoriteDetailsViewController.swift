@@ -7,18 +7,18 @@
 
 import UIKit
 
-class FavoriteDetailsViewController: UIViewController {
+final class FavoriteDetailsViewController: UIViewController {
 
-    @IBOutlet weak var gameImageView: UIImageView!
-    @IBOutlet weak var gameNameLabel: UILabel!
-    @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var raitingLabel: UILabel!
-    @IBOutlet weak var metacriticLabel: UILabel!
-    @IBOutlet weak var genreLabel: UILabel!
-    @IBOutlet weak var raitingBelowLabel: UILabel!
-    @IBOutlet weak var suggestionLabel: UILabel!
-    @IBOutlet weak var reviewsLabel: UILabel!
-    @IBOutlet weak var removeFromFavorites: UIButton!
+    @IBOutlet private weak var gameImageView: UIImageView!
+    @IBOutlet private weak var gameNameLabel: UILabel!
+    @IBOutlet private weak var releaseDateLabel: UILabel!
+    @IBOutlet private weak var raitingLabel: UILabel!
+    @IBOutlet private weak var metacriticLabel: UILabel!
+    @IBOutlet private weak var genreLabel: UILabel!
+    @IBOutlet private weak var raitingBelowLabel: UILabel!
+    @IBOutlet private weak var suggestionLabel: UILabel!
+    @IBOutlet private weak var reviewsLabel: UILabel!
+    @IBOutlet private weak var removeFromFavorites: UIButton!
     var favorite: FavoritesCoreData?
     var viewModel: FavoriteDetailViewModelProtocol = FavoriteDetailViewModel()
     

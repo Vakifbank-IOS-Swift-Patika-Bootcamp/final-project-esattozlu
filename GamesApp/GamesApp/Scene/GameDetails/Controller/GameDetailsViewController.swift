@@ -7,10 +7,10 @@
 
 import UIKit
 
-class GameDetailsViewController: BaseViewController {
+final class GameDetailsViewController: BaseViewController {
 
-    let scrollView = UIScrollView()
-    let stackView = UIStackView()
+    private let scrollView = UIScrollView()
+    private let stackView = UIStackView()
     var selectedGame: Game?
     var detailsView: GameDetailsView?
     private var viewModel: GameDetailsViewModelProtocol = GameDetailsViewModel()

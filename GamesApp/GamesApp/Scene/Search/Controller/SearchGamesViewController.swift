@@ -7,11 +7,11 @@
 
 import UIKit
 
-class SearchGamesViewController: BaseViewController {
+final class SearchGamesViewController: BaseViewController {
 
-    @IBOutlet weak var searchTableView: UITableView!
-    @IBOutlet weak var searchIcon: UIImageView!
-    @IBOutlet weak var emptyTableViewLabel: UILabel!
+    @IBOutlet private weak var searchTableView: UITableView!
+    @IBOutlet private weak var searchIcon: UIImageView!
+    @IBOutlet private weak var emptyTableViewLabel: UILabel!
     private var viewModel: SearchGamesViewModelProtocol = SearchGamesViewModel()
     var timer: Timer?
     var games: [Game]?

@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmX-Q8-mmn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3137" y="-706"/>
+            <point key="canvasLocation" x="2873" y="-706"/>
         </scene>
         <!--Favorite Games-->
         <scene sceneID="tne-QT-ifu">
@@ -85,7 +85,7 @@
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMP-W8-g0u">
-                                <rect key="frame" x="40" y="175" width="313" height="26.333333333333314"/>
+                                <rect key="frame" x="40" y="175" width="313" height="26.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -330,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nf2-3c-0il" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3137" y="-27"/>
+            <point key="canvasLocation" x="2873" y="-27"/>
         </scene>
         <!--Notes-->
         <scene sceneID="fle-6R-kU7">
@@ -360,7 +360,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxP-eI-qiv">
-                                <rect key="frame" x="40" y="175" width="313" height="26.333333333333314"/>
+                                <rect key="frame" x="40" y="175" width="313" height="26.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -417,7 +417,7 @@
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2n-KV-fjC">
-                                <rect key="frame" x="50" y="175" width="293" height="26.333333333333314"/>
+                                <rect key="frame" x="50" y="175" width="293" height="26.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -448,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4c-6G-c8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2962.5954198473282" y="707.04225352112678"/>
+            <point key="canvasLocation" x="2873" y="708"/>
         </scene>
         <!--Note-->
         <scene sceneID="9MV-lS-x8Q">
@@ -615,7 +615,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95M-qd-V3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2475.5725190839694" y="1454.9295774647887"/>
+            <point key="canvasLocation" x="2440" y="1404"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="2D6-s3-Xyt">
@@ -626,7 +626,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oyG-ce-HMu">
-                                <rect key="frame" x="0.0" y="59" width="393" height="648"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="707"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zd1-H5-w1v">
                                     <size key="itemSize" width="149" height="135"/>
@@ -662,11 +662,11 @@
                             <constraint firstItem="gB7-rH-2yI" firstAttribute="bottom" secondItem="oI9-qS-rlw" secondAttribute="bottom" constant="20" id="GVR-yw-OM1"/>
                             <constraint firstItem="kH3-GZ-2Q5" firstAttribute="top" secondItem="oyG-ce-HMu" secondAttribute="bottom" id="IQ2-aA-yfz"/>
                             <constraint firstItem="oI9-qS-rlw" firstAttribute="leading" secondItem="gB7-rH-2yI" secondAttribute="leading" constant="110" id="Ifj-TW-kCr"/>
+                            <constraint firstItem="oyG-ce-HMu" firstAttribute="top" secondItem="Ews-rX-uO3" secondAttribute="top" id="OMN-Lb-c75"/>
                             <constraint firstItem="gB7-rH-2yI" firstAttribute="trailing" secondItem="oyG-ce-HMu" secondAttribute="trailing" id="SHp-Fv-TdB"/>
                             <constraint firstItem="oyG-ce-HMu" firstAttribute="leading" secondItem="gB7-rH-2yI" secondAttribute="leading" id="WeX-zl-SgA"/>
                             <constraint firstItem="oI9-qS-rlw" firstAttribute="top" secondItem="kH3-GZ-2Q5" secondAttribute="bottom" constant="20" id="XwT-s3-5Q3"/>
                             <constraint firstItem="kH3-GZ-2Q5" firstAttribute="leading" secondItem="gB7-rH-2yI" secondAttribute="leading" constant="120" id="c31-qz-73d"/>
-                            <constraint firstItem="oyG-ce-HMu" firstAttribute="top" secondItem="gB7-rH-2yI" secondAttribute="top" id="cHr-BL-x8V"/>
                             <constraint firstItem="gB7-rH-2yI" firstAttribute="trailing" secondItem="kH3-GZ-2Q5" secondAttribute="trailing" constant="120" id="oCG-vr-62n"/>
                             <constraint firstItem="gB7-rH-2yI" firstAttribute="trailing" secondItem="oI9-qS-rlw" secondAttribute="trailing" constant="110" id="qwx-bA-O6Z"/>
                         </constraints>
@@ -679,7 +679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlc-eq-Rbi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-693.89312977099235" y="5.6338028169014089"/>
+            <point key="canvasLocation" x="-680" y="-27"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NsE-If-SAE">

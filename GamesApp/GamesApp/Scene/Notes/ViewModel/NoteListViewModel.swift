@@ -13,12 +13,12 @@ protocol NoteListViewModelProtocol {
     func deleteNote(note: NotesCoreData)
 }
 
-protocol NoteListViewModelDelegate {
+protocol NoteListViewModelDelegate: AnyObject {
     func coreDataChanged()
 }
 
-class NoteListViewModel: NoteListViewModelProtocol {
-    var delegate: NoteListViewModelDelegate?
+final class NoteListViewModel: NoteListViewModelProtocol {
+    weak var delegate: NoteListViewModelDelegate?
     
     init() {
         CoreDataManager.shared.notesDelegate = self

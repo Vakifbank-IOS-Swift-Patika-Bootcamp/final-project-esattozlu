@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameDetailsView: UIView {
+final class GameDetailsView: UIView {
     
     @IBOutlet private weak var gameImageView: UIImageView!
     @IBOutlet private weak var addToFavButton: UIButton!
@@ -103,6 +103,7 @@ class GameDetailsView: UIView {
     }
 }
 
+// MARK: - CollectionView Extentions
 extension GameDetailsView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         selectedGame?.shortScreenshots?.count ?? 0

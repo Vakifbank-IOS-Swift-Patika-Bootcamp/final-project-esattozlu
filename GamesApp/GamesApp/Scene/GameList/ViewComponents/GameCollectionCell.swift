@@ -8,24 +8,23 @@
 import UIKit
 import SDWebImage
 
-class GameCollectionCell: UICollectionViewCell {
-
+final class GameCollectionCell: UICollectionViewCell {
     
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var gameImageView: UIImageView!
-    @IBOutlet weak var gameNameLabel: UILabel!
-    @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var genreLabel: UILabel!
-    @IBOutlet weak var platformLabel: UILabel!
-    @IBOutlet weak var raitingLabel: UILabel!
-    @IBOutlet weak var metacriticLabel: UILabel!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var gameImageView: UIImageView!
+    @IBOutlet private weak var gameNameLabel: UILabel!
+    @IBOutlet private weak var releaseDateLabel: UILabel!
+    @IBOutlet private weak var genreLabel: UILabel!
+    @IBOutlet private weak var platformLabel: UILabel!
+    @IBOutlet private weak var raitingLabel: UILabel!
+    @IBOutlet private weak var metacriticLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func configureCell() {
+    private func configureCell() {
         containerView.layer.cornerRadius = 20
         containerView.layer.masksToBounds = true
         layer.cornerRadius = 20
