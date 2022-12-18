@@ -1,12 +1,9 @@
 
 # Final Project
-<div>
+
 <div align="center">
-<table>
-<tr>
-<td><img src="https://user-images.githubusercontent.com/96587699/208316483-12c639d2-e3b9-4ac8-a27c-f3f41e4c13e6.mov" alt="drawing" width="275"/></td>  
-</tr>
-</table>
+https://user-images.githubusercontent.com/96587699/208316871-ebfc45bc-feb0-4bc5-ae6e-9e10ed052235.mp4
+
 </div>
 
 ## Games App
