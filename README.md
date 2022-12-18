@@ -1,5 +1,13 @@
 
 # Final Project
+<div>
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208316483-12c639d2-e3b9-4ac8-a27c-f3f41e4c13e6.mov" alt="drawing" width="275"/></td>  
+</tr>
+</table>
+</div>
 
 ## Games App
 - Games App, bütün platform oyunlarının aratılabildiği, yüksek puanlı, yeni çıkan gibi kriterlere göre filtrelenerek listelenebildiği, oyun detayları incelenerek favoriye alınabilen, oyunlar hakkında notlar alınabilen bir iOS uygulamasıdır.
