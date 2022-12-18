@@ -7,13 +7,13 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
+final class FavoritesViewController: UIViewController {
 
-    @IBOutlet weak var favoritesCollectionView: UICollectionView!
+    @IBOutlet private weak var favoritesCollectionView: UICollectionView!
     private var viewModel: FavoritesViewModelProtocol = FavoritesViewModel()
     var favoriteGames: [FavoritesCoreData]?
-    @IBOutlet weak var emptyFavoritesIcon: UIImageView!
-    @IBOutlet weak var emptyFavoritesLabel: UILabel!
+    @IBOutlet private weak var emptyFavoritesIcon: UIImageView!
+    @IBOutlet private weak var emptyFavoritesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

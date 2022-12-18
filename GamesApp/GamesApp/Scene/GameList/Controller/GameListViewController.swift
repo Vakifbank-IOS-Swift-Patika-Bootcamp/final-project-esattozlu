@@ -7,14 +7,14 @@
 
 import UIKit
 
-class GameListViewController: BaseViewController {
+final class GameListViewController: BaseViewController {
 
-    @IBOutlet weak var gameListCollectionView: UICollectionView!
+    @IBOutlet private weak var gameListCollectionView: UICollectionView!
     private var viewModel: GameListViewModelProtocol = GameListViewModel()
-    var timer: Timer?
-    var page = 1
-    var filterTag = 0
-    var filterMenu: UIMenu {
+    private var timer: Timer?
+    private var page = 1
+    private var filterTag = 0
+    private var filterMenu: UIMenu {
         return UIMenu(title: "Filter".localized(), image: nil, identifier: nil, options: [], children: menuItems)
     }
     var menuItems: [UIAction] {
@@ -30,9 +30,10 @@ class GameListViewController: BaseViewController {
         viewModel.fetchAllGames(page: 1)
         configureNavigationItem()
         configureGameSearchController()
-        configureLaunchNotification()
+        viewModel.sendNotification(title: "Welcome!", body: "We are so happy to see you here!", delegate: self)
     }
     
+    // MARK: - Configures Menu Items
     func configureMenuItems() -> [UIAction] {
         return [
             UIAction(title: "All Games".localized(), image: UIImage(named: "all"), handler: { (_) in
@@ -62,13 +63,6 @@ class GameListViewController: BaseViewController {
         ]
     }
     
-    func configureLaunchNotification() {
-        let title = "Welcome!".localized()
-        let body = "We are so happy to see you here!".localized()
-        LocalNotificationManager.shared.sendNotification(title: title, body: body)
-        LocalNotificationManager.shared.userNotificationCenter.delegate = self
-    }
-    
     func configureCollectionView() {
         gameListCollectionView.delegate    = self
         gameListCollectionView.dataSource  = self
@@ -95,6 +89,7 @@ class GameListViewController: BaseViewController {
     }
 }
 
+// MARK: - CollectionView Extention
 extension GameListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.gamesCount()
@@ -112,8 +107,8 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
     }
 }
 
+// MARK: - CollectionViewDelegateFlowLayout Extention
 extension GameListViewController: UICollectionViewDelegateFlowLayout {
-    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
@@ -147,6 +142,7 @@ extension GameListViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
+// MARK: - SearchBar Extention
 extension GameListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -185,6 +181,7 @@ extension GameListViewController: GameListViewModelDelegate {
     }
 }
 
+// MARK: - LocalNotification Extention
 extension GameListViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         

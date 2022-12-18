@@ -7,16 +7,16 @@
 
 import UIKit
 
-class SearchTableViewCell: UITableViewCell {
+final class SearchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var gameImageView: UIImageView!
-    @IBOutlet weak var releasedLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var metacriticLabel: UILabel!
-    @IBOutlet weak var genreLabel: UILabel!
-    @IBOutlet weak var gameNameLabel: UILabel!
-    @IBOutlet weak var platformsLabel: UILabel!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var gameImageView: UIImageView!
+    @IBOutlet private weak var releasedLabel: UILabel!
+    @IBOutlet private weak var ratingLabel: UILabel!
+    @IBOutlet private weak var metacriticLabel: UILabel!
+    @IBOutlet private weak var genreLabel: UILabel!
+    @IBOutlet private weak var gameNameLabel: UILabel!
+    @IBOutlet private weak var platformsLabel: UILabel!
     
     var game: Game? {
         didSet {

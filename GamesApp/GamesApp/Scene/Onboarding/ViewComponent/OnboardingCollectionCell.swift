@@ -7,10 +7,10 @@
 
 import UIKit
 
-class OnboardingCollectionCell: UICollectionViewCell {
+final class OnboardingCollectionCell: UICollectionViewCell {
 
-    @IBOutlet weak var onboardingImageView: UIImageView!
-    @IBOutlet weak var onboardingDescriptionLabel: UILabel!
+    @IBOutlet private weak var onboardingImageView: UIImageView!
+    @IBOutlet private weak var onboardingDescriptionLabel: UILabel!
     var onboardingModel: OnboardingModel? {
         didSet {
             onboardingImageView.image = onboardingModel?.image

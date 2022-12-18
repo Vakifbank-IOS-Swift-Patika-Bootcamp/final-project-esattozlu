@@ -14,11 +14,12 @@ protocol OnboardingViewModelProtocol {
     func getSizeForItem(width: CGFloat, height: CGFloat) -> CGSize
 }
 
+// MARK: - OnboardingViewModel
 final class OnboardingViewModel: OnboardingViewModelProtocol {
-    var onboardingPages: [OnboardingModel] = [
-    OnboardingModel(description: "With the Game App, you can list the games on all platforms and examine their details.", image: UIImage(named: "Boarding1")),
-    OnboardingModel(description: "You can add games to your favourites, then view your favorite game details and remove them from your favourites.", image: UIImage(named: "Boarding2")),
-    OnboardingModel(description: "You can take notes about the games, revise the notes and view them whenever you want.", image: UIImage(named: "Boarding3"))
+    internal var onboardingPages: [OnboardingModel] = [
+        OnboardingModel(description: "With the Game App, you can list the games on all platforms and examine their details.".localized(), image: UIImage(named: "Boarding1")),
+        OnboardingModel(description: "You can add games to your favourites, then view your favorite game details and remove them from your favourites.".localized(), image: UIImage(named: "Boarding2")),
+        OnboardingModel(description: "You can take notes about the games, revise the notes and view them whenever you want.".localized(), image: UIImage(named: "Boarding3"))
     ]
         
     func getPageCount() -> Int {

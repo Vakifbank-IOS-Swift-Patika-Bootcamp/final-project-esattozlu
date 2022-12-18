@@ -15,12 +15,12 @@ protocol AddNoteViewModelProtocol {
     func controlAndSave(isFromAddButton: Bool, isPreviouslyAdded: Bool, gameFromSearch: Game?, note: String?, gameFromNoteList: NotesCoreData?, completion: (_ error: String) -> Void)
 }
 
-protocol AddNoteViewModelDelegate {
+protocol AddNoteViewModelDelegate: AnyObject {
     func noteSaved()
 }
 
 final class AddNoteViewModel: AddNoteViewModelProtocol {
-    var delegate: AddNoteViewModelDelegate?
+    weak var delegate: AddNoteViewModelDelegate?
     
     func saveNote(game: Game, note: String) {
         CoreDataManager.shared.saveToNotes(game: game, note: note) {
