@@ -42,7 +42,11 @@ final class SmallGamesCollectionCell: UICollectionViewCell {
     
     func configureComponents() {
         guard let game = game else { return }
-        gameImageView.sd_setImage(with: URL(string: game.gameImage!))
+        if let url = game.gameImage {
+            gameImageView.sd_setImage(with: URL(string: url))
+        } else {
+            gameImageView.sd_setImage(with: AssetExtractor.createLocalUrl(forImageNamed: "emptyImage"))
+        }
         gameNameLabel.text = game.gameName
         releaseLabel.text = game.gameReleased
         genreLabel.text = game.genres ?? "Unspecified"

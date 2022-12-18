@@ -64,12 +64,14 @@ final class AddNoteViewController: BaseViewController {
     }
     
     func configureComponentsFromCoreDataModel() {
-        guard let game = gameFromNoteList,
-              let imageURLString = game.gameImage
-        else { return }
+        guard let game = gameFromNoteList else { return }
+        if let url = game.gameImage {
+            gameImageView.sd_setImage(with: URL(string: url))
+        } else {
+            gameImageView.sd_setImage(with: AssetExtractor.createLocalUrl(forImageNamed: "emptyImage"))
+        }
         gameNameLabel.text = game.gameName
         releaseDataLabel.text = game.gameReleased
-        gameImageView.sd_setImage(with: URL(string: imageURLString))
         ratingLabel.text = game.raiting
         metacriticLabel.text = game.metacritic
         noteTextView.text = game.note

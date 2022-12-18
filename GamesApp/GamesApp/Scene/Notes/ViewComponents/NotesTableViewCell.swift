@@ -23,9 +23,13 @@ final class NotesTableViewCell: UITableViewCell {
     }
     
     func configureLabels() {
+        if let url = note?.gameImage {
+            gameImageView.sd_setImage(with: URL(string: url))
+        } else {
+            gameImageView.sd_setImage(with: AssetExtractor.createLocalUrl(forImageNamed: "emptyImage"))
+        }
         gameNameLabel.text = note?.gameName
         releaseDateLabel.text = note?.gameReleased
-        gameImageView.sd_setImage(with: URL(string: note?.gameImage ?? ""))
         gameNote.text = note?.note
         ratingLabel.text = note?.raiting
         metacriticLabel.text = note?.metacritic
