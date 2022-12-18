@@ -28,6 +28,7 @@ final class AddNoteViewController: BaseViewController {
         
         configureAllComponents()
         configureComponentView()
+        hideKeyboardWhenTappedAround()
     }
     
     func configureComponentView() {
