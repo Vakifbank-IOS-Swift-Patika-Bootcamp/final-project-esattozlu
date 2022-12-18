@@ -1,14 +1,15 @@
 
 # Final Project
 
-## Games App - Episode Notes
-Games App, bütün platform oyunlarının aratılabildiği, yüksek puanlı, yeni çıkan gibi kriterlere göre filtrelenerek listelenebildiği, oyun detayları incelenerek favoriye alınabilen, oyunlar hakkında notlar alınabilen bir iOS uygulamasıdır.
-Uygulamada localization mevcuttur. Cihaz diline göre ingilizce veya türkçe olarak kullanılabilir.
-Uygulama Onboarding ekranı ile açılır. Onboarding tamamlandıktan sonra ana tablara geçiş yapılır.
-Uygulama Games, Favs, Notes Tablarına bağlı ekranlardan oluşur.
-Uygulama ekranlarını aşağıdan inceleyebilirsiniz.
+## Games App
+- Games App, bütün platform oyunlarının aratılabildiği, yüksek puanlı, yeni çıkan gibi kriterlere göre filtrelenerek listelenebildiği, oyun detayları incelenerek favoriye alınabilen, oyunlar hakkında notlar alınabilen bir iOS uygulamasıdır.
+- Uygulamada localization mevcuttur. Cihaz diline göre ingilizce veya türkçe olarak kullanılabilir.
+- Uygulama Onboarding ekranı ile açılır. Onboarding tamamlandıktan sonra ana tablara geçiş yapılır.
+- Uygulama Games, Favs, Notes Tablarına bağlı ekranlardan oluşur.
+- Uygulama ekranlarını aşağıdan inceleyebilirsiniz.
 
 ### Onboarding
+<div>
 <div align="center">
 <table>
 <tr>
@@ -17,13 +18,13 @@ Uygulama ekranlarını aşağıdan inceleyebilirsiniz.
 </td>  
 </tr>
 </table>
-
+</div>
 - Uygulama 3sn'lik LaunchScreen sonrasında Onboarding Ekranı ile açılır.
 - Onboarding ekranı 3 sayfadan oluşur. Sayfalar CollectionView'de Horizontal olarak yönetilir. İster kaydırılarak, ister next butonu ile sayfalar ilerletilebilir.
 - Son sayfada buton "Get started" olarak değiştirilerek uygulamanın ilk Tab'ı olan Games'e yönlendirme yapılır.
 
 ## Games Tab
-</div>
+<div>
 <div align="center">
 <table>
 <tr>
@@ -48,7 +49,7 @@ Uygulama ekranlarını aşağıdan inceleyebilirsiniz.
 - Bir oyunun üzerine tıklayınca detay sayfasına geçiş sağlanır.
 
 ### Game Details Sayfası
-</div>
+<div>
 <div align="center">
 <table>
 <tr>
@@ -66,7 +67,7 @@ Uygulama ekranlarını aşağıdan inceleyebilirsiniz.
 - Servisten yyyy-mm-dd formatında gelen tarih extention ile dönüştürülerek görselde görülen formata çevrilmiştir.
 
 ## Favorites Tab
-</div>
+<div>
 <div align="center">
 <table>
 <tr>
@@ -82,7 +83,7 @@ Uygulama ekranlarını aşağıdan inceleyebilirsiniz.
 - Favorilerden birine tıklanarak özet detay sayfası modal olarak açılır. Modal açılan ekranda bulunan "Remove From Favorites" butonuna tıklanarak buradan da oyunlar favoriden çıkarılabilir.
 
 ## Notes Tab
-</div>
+<div>
 <div align="center">
 <table>
 <tr>
@@ -101,7 +102,7 @@ Uygulama ekranlarını aşağıdan inceleyebilirsiniz.
 - Notların üzerine tıklandığında not ekleme ekranı dolu şekilde editleme yapmak üzere açılır. Save ederek güncelleme sağlanabilir veya çıkış (x) butonu ile güncelleme yapılmadan ekran kapatılabilir.
 - Boş ve dolu olarak yukarıdaki görselde görebilirsiniz.
 
-</div>
+<div>
 <div align="center">
 <table>
 <tr>
@@ -123,7 +124,7 @@ Uygulama ekranlarını aşağıdan inceleyebilirsiniz.
 
 ## Detaylar
 - Uygulama macOS Ventura 13.0.1 ve XCode 14.1 sürümü ile oluşturulmuştur.
-- Uygulama içinde servisten gelen tarihi düzenlemek için Date Extention'ı bulunuyor.
+- Uygulama içinde servisten gelen tarihi düzenlemek için Date Extention'ı eklenmiştir.
 - İçinde indicator, alert ve keyboard gestures bulunan bir BaseViewController oluşturulmuştur. Alert, indicator veya keyboard gesture kullanılan ekranlar bu ViewController'dan inherit edilmiştir.
 - Aramalar yapılırken ",-*<>%&/..." gibi özel karakterleri servise göndermemek için  string extention'ı oluşturulmuştur.
 - Stringleri localize edebilmek için localize methodu string extention'ına eklenmiştir.
@@ -133,3 +134,55 @@ Uygulama ekranlarını aşağıdan inceleyebilirsiniz.
 - Arama yapılırken her harf tuşlamasında istek göndermemek için her klavye tuşu basımından sonra 0.5sn bekler. Daha sonra istek atılarak aranan oyunlar listelenir.
 - Not ekleme ekranında oyuna daha önce not eklenip eklenmediği kontrolü yapılır. Eğer eklenmişse daha önce eklenen not editlenmek üzere açılır. Eğer eklenmemişse boş şekilde yeni not eklemek için açılır.
 - Uygulamada bulunan bütün ViewModel'lere unit test yazılmış ve uygulamanın %40,9'u cover edilmiştir.
+## Dark Mode Ekran Görüntüleri
+<div>
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208314683-aac020f2-99b9-4377-8ae2-c6474d5eb9f9.png" alt="drawing" width="275
+"/></td> 
+<td><img src="https://user-images.githubusercontent.com/96587699/208314682-06115e7e-c9da-414d-b2e7-2b214a81d2bf.png" alt="drawing" width="275
+"/></td> 
+<td><img src="https://user-images.githubusercontent.com/96587699/208314680-f4fc697a-c764-43a9-a465-7bc92c55f683.png" alt="drawing" width="275
+"/></td> 
+</tr>
+</table>
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208314672-4d48dd44-b11d-4a90-88d8-b5185f2259f6.png" alt="drawing" width="275
+"/></td> 
+<td><img src="https://user-images.githubusercontent.com/96587699/208314676-dc9937e2-81c4-4074-94cf-59c166df343b.png" alt="drawing" width="275
+"/></td> 
+<td><img src="https://user-images.githubusercontent.com/96587699/208314674-17c2fb4a-128f-4c75-a4ae-0d5660a23a3e.png" alt="drawing" width="275
+"/></td> 
+</tr>
+</table>
+</div>
+
+## Türkçe Ekran Görüntüleri
+<div>
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208314853-c303c363-ccab-4442-ab9e-de3befa78276.png" alt="drawing" width="275
+"/></td> 
+<td><img src="https://user-images.githubusercontent.com/96587699/208314852-73e6b26d-bdd0-4ca0-a651-6b4367a04b42.png" alt="drawing" width="275
+"/></td> 
+<td><img src="https://user-images.githubusercontent.com/96587699/208314851-7f879031-8cb7-45f5-900a-a328f495118a.png" alt="drawing" width="275
+"/></td> 
+</tr>
+</table>
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/208314850-897ba3ac-3cd8-41bc-9c36-db9ac35b81b4.png" alt="drawing" width="275
+"/></td> 
+<td><img src="https://user-images.githubusercontent.com/96587699/208314848-55e55ac4-88d3-42e3-a88d-1b81ed242b2c.png" alt="drawing" width="275
+"/></td> 
+</tr>
+</table>
+</div>
+
+## Pragmatic Programmer & Clean Code
+- Pragmatic programmer ve Clean Code özetleri eklenmiştir.
+- Commit tarihlerine bakmak için repomu inceleyebilirsiniz.
+- https://github.com/esattozlu?tab=repositories
