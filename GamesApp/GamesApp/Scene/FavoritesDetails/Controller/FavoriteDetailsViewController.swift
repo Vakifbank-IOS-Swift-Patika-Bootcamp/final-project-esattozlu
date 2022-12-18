@@ -29,10 +29,12 @@ final class FavoriteDetailsViewController: UIViewController {
     }
     
     func configureComponents() {
-        guard let favorite = favorite,
-              let imageUrlString = favorite.gameImage
-        else { return }
-        gameImageView.sd_setImage(with: URL(string: imageUrlString))
+        guard let favorite = favorite else { return }
+        if let url = favorite.gameImage {
+            gameImageView.sd_setImage(with: URL(string: url))
+        } else {
+            gameImageView.sd_setImage(with: AssetExtractor.createLocalUrl(forImageNamed: "emptyImage"))
+        }
         gameNameLabel.text = favorite.gameName
         releaseDateLabel.text = favorite.gameReleased
         raitingLabel.text = favorite.raiting

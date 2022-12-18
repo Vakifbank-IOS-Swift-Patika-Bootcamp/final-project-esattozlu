@@ -74,7 +74,11 @@ struct Game: Codable {
     }
     
     var backgroundUrl: URL? {
-        return URL(string: backgroundImage ?? "")
+        if let backgroundImage = backgroundImage {
+            return URL(string: backgroundImage)
+        } else {
+            return AssetExtractor.createLocalUrl(forImageNamed: "emptyImage")
+        }
     }
 
     var genreText: String? {
@@ -110,9 +114,13 @@ struct Platform: Codable {
 // MARK: - ShortScreenshot
 struct ShortScreenshot: Codable {
     let id: Int
-    let image: String
+    let image: String?
     
-    var screenshotUrl: URL {
-        return URL(string: image)!
+    var screenshotUrl: URL? {
+        if let image = image {
+            return URL(string: image)
+        } else {
+            return AssetExtractor.createLocalUrl(forImageNamed: "emptyImage")
+        }
     }
 }
