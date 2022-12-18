@@ -8,7 +8,7 @@
 import Foundation
 import UserNotifications
 
-protocol GameListViewModelProtocol {
+protocol GameListViewModelProtocol: AnyObject {
     var delegate: GameListViewModelDelegate? { get set }
     var paginationStarted: Bool { get set }
     var notificationManager: LocalNotificationProtocol { get set }
@@ -28,7 +28,7 @@ protocol GameListViewModelDelegate: AnyObject {
 
 final class GameListViewModel: GameListViewModelProtocol {
     var notificationManager: LocalNotificationProtocol
-    var delegate: GameListViewModelDelegate?
+    weak var delegate: GameListViewModelDelegate?
     var paginationStarted = false
     private var games: [Game]?
     

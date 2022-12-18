@@ -8,9 +8,9 @@
 import UIKit
 import SDWebImage
 
-class ScreenshotsCollectionCell: UICollectionViewCell {
+final class ScreenshotsCollectionCell: UICollectionViewCell {
 
-    @IBOutlet weak var screenshotsImageView: UIImageView!
+    @IBOutlet private weak var screenshotsImageView: UIImageView!
     var gameImageUrl: URL? {
         didSet {
             screenshotsImageView.sd_setImage(with: gameImageUrl)

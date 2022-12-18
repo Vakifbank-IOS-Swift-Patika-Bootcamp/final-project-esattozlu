@@ -12,13 +12,13 @@ protocol CoreDataManagerProtocol {
     var notesDelegate: CoreDataManagerDelegate? { get set }
 }
 
-protocol CoreDataManagerDelegate {
+protocol CoreDataManagerDelegate: AnyObject {
     func coreDataUpdated()
 }
 
 final class CoreDataManager: CoreDataManagerProtocol {
     static let shared = CoreDataManager()
-    var notesDelegate: CoreDataManagerDelegate?
+    weak var notesDelegate: CoreDataManagerDelegate?
     private let managedContext: NSManagedObjectContext!
     
     private init() {

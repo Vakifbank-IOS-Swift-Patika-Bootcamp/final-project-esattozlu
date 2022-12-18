@@ -16,12 +16,12 @@ protocol SearchGamesViewModelProtocol {
     func clearGames()
 }
 
-protocol SearchGamesViewModelDelegate {
+protocol SearchGamesViewModelDelegate: AnyObject {
     func gamesLoaded()
 }
 
-class SearchGamesViewModel: SearchGamesViewModelProtocol {
-    var delegate: SearchGamesViewModelDelegate?
+final class SearchGamesViewModel: SearchGamesViewModelProtocol {
+    weak var delegate: SearchGamesViewModelDelegate?
     var paginationStarted = false
     private var games: [Game]?
     

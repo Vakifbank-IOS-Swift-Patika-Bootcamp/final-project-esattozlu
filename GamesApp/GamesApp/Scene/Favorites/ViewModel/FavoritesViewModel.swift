@@ -17,7 +17,7 @@ protocol FavoritesViewModelDelegate: AnyObject {
     func favoritesChanged()
 }
 
-class FavoritesViewModel: FavoritesViewModelProtocol {
+final class FavoritesViewModel: FavoritesViewModelProtocol {
     weak var delegate: FavoritesViewModelDelegate?
     var favoriteGames: [FavoritesCoreData]?
     

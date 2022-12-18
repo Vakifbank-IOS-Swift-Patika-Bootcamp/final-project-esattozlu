@@ -7,16 +7,16 @@
 
 import UIKit
 
-class AddNoteViewController: BaseViewController {
+final class AddNoteViewController: BaseViewController {
 
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var gameNameLabel: UILabel!
-    @IBOutlet weak var releaseDataLabel: UILabel!
-    @IBOutlet weak var gameImageView: UIImageView!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var metacriticLabel: UILabel!
-    @IBOutlet weak var noteTextView: UITextView!
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var gameNameLabel: UILabel!
+    @IBOutlet private weak var releaseDataLabel: UILabel!
+    @IBOutlet private weak var gameImageView: UIImageView!
+    @IBOutlet private weak var ratingLabel: UILabel!
+    @IBOutlet private weak var metacriticLabel: UILabel!
+    @IBOutlet private weak var noteTextView: UITextView!
+    @IBOutlet private weak var saveButton: UIButton!
     var viewModel: AddNoteViewModelProtocol = AddNoteViewModel()
     var gameFromSearch: Game?
     var gameFromNoteList: NotesCoreData?

@@ -7,24 +7,24 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+final class OnboardingViewController: UIViewController {
 
-    @IBOutlet weak var onboardingCollectionView: UICollectionView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet private weak var onboardingCollectionView: UICollectionView!
+    @IBOutlet private weak var pageControl: UIPageControl!
     let viewModel = OnboardingViewModel()
     var currentPage = 0 {
         didSet {
             pageControl.currentPage = currentPage
             if currentPage == viewModel.getPageCount() - 1 {
-                continueButton.setTitle("Get started", for: .normal)
+                continueButton.setTitle("Get started".localized(), for: .normal)
             } else {
-                continueButton.setTitle("Next", for: .normal)
+                continueButton.setTitle("Next".localized(), for: .normal)
                 continueButton.titleLabel?.font = UIFont(name: "System", size: 19)
             }
         }
     }
     
-    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet private weak var continueButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,6 @@ class OnboardingViewController: UIViewController {
         onboardingCollectionView.dataSource = self
         onboardingCollectionView.register(UINib(nibName: "OnboardingCollectionCell", bundle: nil), forCellWithReuseIdentifier: "onboardingCell")
     }
-
     
     @IBAction func continueButtonClicked(_ sender: Any) {
         if currentPage == viewModel.getPageCount() - 1 {

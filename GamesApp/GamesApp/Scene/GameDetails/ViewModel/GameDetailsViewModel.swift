@@ -23,7 +23,7 @@ protocol GameDetailsCoreDataDelegate: AnyObject {
     func gameFavoriteStatusChanged()
 }
 
-class GameDetailsViewModel: GameDetailsViewModelProtocol {
+final class GameDetailsViewModel: GameDetailsViewModelProtocol {
     weak var gameDetailsViewModelDelegate: GameDetailsViewModelDelegate?
     private var gameDetail: GameDetail?
     
